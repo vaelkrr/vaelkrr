@@ -144,8 +144,8 @@
       pointer-events: none;
     }
 
-    .collection {
-      padding: 55px 7% 80px;
+    .section {
+      padding: 65px 7% 80px;
       border-top: 1px solid #343430;
     }
 
@@ -154,6 +154,137 @@
       letter-spacing: 4px;
       margin-bottom: 25px;
     }
+
+    .section-intro {
+      color: #aaa69c;
+      line-height: 1.7;
+      font-size: 13px;
+      margin-bottom: 35px;
+    }
+
+    /* SHOP */
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .shop-card {
+      display: block;
+      color: #f1eee7;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .shop-image {
+      height: 340px;
+      background: #191917;
+      border: 1px solid #343430;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: background 0.25s;
+    }
+
+    .shop-card:hover .shop-image {
+      background: #242420;
+    }
+
+    .shirt-text {
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      text-align: center;
+      transform: rotate(-5deg);
+    }
+
+    .shirt-text.small {
+      font-size: 23px;
+      letter-spacing: -1px;
+    }
+
+    .shirt-text.back {
+      font-size: clamp(18px, 2.5vw, 29px);
+      letter-spacing: -1px;
+    }
+
+    .shop-info {
+      padding-top: 16px;
+    }
+
+    .shop-info h3 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    .shop-info p {
+      color: #aaa69c;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .shop-price {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .shop-label {
+      display: inline-block;
+      color: #77746d;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    /* COLECCIONES */
+
+    .collection-block {
+      padding: 65px 0;
+      border-top: 1px solid #343430;
+      scroll-margin-top: 25px;
+    }
+
+    .collection-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .collection-heading h3 {
+      font-size: 22px;
+      letter-spacing: -1px;
+    }
+
+    .collection-heading span {
+      color: #aaa69c;
+      font-size: 11px;
+    }
+
+    .collection-block p {
+      color: #aaa69c;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 550px;
+    }
+
+    .coming-soon {
+      margin-top: 25px;
+      padding: 25px;
+      border: 1px solid #343430;
+      color: #77746d;
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    /* ARCHIVE */
 
     .gallery {
       display: grid;
@@ -194,6 +325,16 @@
       letter-spacing: 2px;
     }
 
+    @media (max-width: 800px) {
+      .shop-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .shop-image {
+        height: 280px;
+      }
+    }
+
     @media (max-width: 600px) {
       header {
         padding: 20px 5%;
@@ -225,8 +366,16 @@
         right: 0;
       }
 
-      .collection {
-        padding: 40px 5% 60px;
+      .section {
+        padding: 45px 5% 60px;
+      }
+
+      .shop-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-image {
+        height: 360px;
       }
 
       .gallery {
@@ -245,7 +394,7 @@
   <header>
     <div class="logo">VÆLKR®</div>
     <nav>
-      <a href="#collection">COLLECTION</a>
+      <a href="#shop">SHOP</a>
       <a href="#about">ABOUT</a>
     </nav>
   </header>
@@ -272,18 +421,114 @@
         </p>
       </div>
 
-      <a class="hero-button" href="#collection">
-        EXPLORE THE ARCHIVE ↘
+      <a class="hero-button" href="#shop">
+        EXPLORE THE SHOP ↘
       </a>
     </div>
 
     <div class="hero-mark" aria-hidden="true">Æ</div>
   </main>
 
-  <section class="collection" id="collection">
-    <h2>01 / THE ARCHIVE</h2>
+  <!-- SHOP -->
 
-    <p class="description">
+  <section class="section" id="shop">
+    <h2>01 / SHOP THE COLLECTIONS</h2>
+
+    <p class="section-intro">
+      THREE COLLECTIONS. DIFFERENT WAYS TO STAND OUT.
+    </p>
+
+    <div class="shop-grid">
+
+      <a class="shop-card" href="#basic">
+        <div class="shop-image">
+          <span class="shirt-text">FUCK OFF.</span>
+        </div>
+        <div class="shop-info">
+          <h3>BASIC / TEXT</h3>
+          <p>Statement text. Nothing else needed.</p>
+          <span class="shop-price">FROM 11,90 €</span>
+          <span class="shop-label">01 — EXPLORE</span>
+        </div>
+      </a>
+
+      <a class="shop-card" href="#essentials">
+        <div class="shop-image">
+          <span class="shirt-text small">VÆLKR®</span>
+        </div>
+        <div class="shop-info">
+          <h3>ESSENTIALS</h3>
+          <p>Original designs. Small releases.</p>
+          <span class="shop-price">FROM 17,90 €</span>
+          <span class="shop-label">02 — EXPLORE</span>
+        </div>
+      </a>
+
+      <a class="shop-card" href="#oneofone">
+        <div class="shop-image">
+          <span class="shirt-text back">ONE<br>OF<br>ONE.</span>
+        </div>
+        <div class="shop-info">
+          <h3>ONE OF ONE</h3>
+          <p>Hand-painted. Individually made.</p>
+          <span class="shop-price">FROM 24,90 €</span>
+          <span class="shop-label">03 — EXPLORE</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BASIC / TEXT -->
+
+  <section class="section">
+    <div class="collection-block" id="basic">
+      <div class="collection-heading">
+        <h3>01 — BASIC / TEXT</h3>
+        <span>11,90–13,90 €</span>
+      </div>
+      <p>
+        Bold statements. Clean designs.
+        Text placed front or back. Nothing unnecessary.
+      </p>
+      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
+    </div>
+
+    <!-- ESSENTIALS -->
+
+    <div class="collection-block" id="essentials">
+      <div class="collection-heading">
+        <h3>02 — ESSENTIALS</h3>
+        <span>FROM 17,90 €</span>
+      </div>
+      <p>
+        Original VÆLKR designs, reproduced in small quantities.
+        Made to be worn differently.
+      </p>
+      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
+    </div>
+
+    <!-- ONE OF ONE -->
+
+    <div class="collection-block" id="oneofone">
+      <div class="collection-heading">
+        <h3>03 — ONE OF ONE</h3>
+        <span>24,90–29,90 €</span>
+      </div>
+      <p>
+        Hand-painted pieces. Unique designs.
+        No two pieces have to be exactly alike.
+      </p>
+      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
+
+  <section class="section" id="archive">
+    <h2>02 / THE ARCHIVE</h2>
+
+    <p class="section-intro">
       EVERY PIECE HAS A STORY.
     </p>
 
@@ -306,10 +551,12 @@
     </div>
   </section>
 
-  <section class="collection" id="about">
-    <h2>02 / ABOUT VÆLKR</h2>
+  <!-- ABOUT -->
 
-    <p class="description">
+  <section class="section" id="about">
+    <h2>03 / ABOUT VÆLKR</h2>
+
+    <p class="section-intro">
       Not mass-produced. Not ordinary.<br>
       Every piece starts with an idea and a pair of hands.
     </p>
