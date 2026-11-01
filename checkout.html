@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VÆLKR — Checkout</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #10100f;
+  color: #f1eee7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  padding: 25px 7%;
+  border-bottom: 1px solid #343430;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+header a {
+  color: #aaa69c;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+main {
+  max-width: 1050px;
+  margin: 65px auto;
+  padding: 0 25px;
+}
+
+h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  letter-spacing: -4px;
+  margin-bottom: 12px;
+}
+
+.intro {
+  color: #aaa69c;
+  font-size: 12px;
+  margin-bottom: 45px;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+}
+
+h2 {
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  background: #191917;
+  border: 1px solid #494943;
+  color: #f1eee7;
+  font-family: inherit;
+  outline: none;
+}
+
+input:focus {
+  border-color: #f1eee7;
+}
+
+.order {
+  border: 1px solid #343430;
+  padding: 25px;
+  height: fit-content;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid #343430;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.muted {
+  color: #aaa69c;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.note {
+  color: #77746d;
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 18px;
+  border: 0;
+  background: #f1eee7;
+  color: #10100f;
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #aaa69c;
+}
+
+.empty {
+  color: #aaa69c;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer {
+  border-top: 1px solid #343430;
+  padding: 25px 7%;
+  color: #77746d;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+@media(max-width: 700px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  main {
+    margin: 40px auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">VÆLKR®</div>
+  <a href="index.html">← BACK TO SHOP</a>
+</header>
+
+<main>
+
+  <h1>CHECKOUT.</h1>
+  <p class="intro">ALMOST YOURS. COMPLETE YOUR ORDER.</p>
+
+  <div class="checkout-grid">
+
+    <section>
+      <h2>01 / CUSTOMER DETAILS</h2>
+
+      <div class="field">
+        <label for="name">FULL NAME</label>
+        <input id="name" type="text" placeholder="Your name">
+      </div>
+
+      <div class="field">
+        <label for="email">EMAIL ADDRESS</label>
+        <input id="email" type="email" placeholder="your@email.com">
+      </div>
+
+      <h2 style="margin-top:40px;">02 / SHIPPING DETAILS</h2>
+
+      <div class="field">
+        <label for="address">ADDRESS</label>
+        <input id="address" type="text" placeholder="Street and number">
+      </div>
+
+      <div class="field">
+        <label for="city">CITY</label>
+        <input id="city" type="text" placeholder="Your city">
+      </div>
+
+      <div class="field">
+        <label for="postcode">POSTCODE</label>
+        <input id="postcode" type="text" placeholder="00000">
+      </div>
+
+      <p class="note">
+        DEMO CHECKOUT — No information is sent or stored.
+        Online ordering and shipping are not connected yet.
+      </p>
+    </section>
+
+    <aside class="order">
+      <h2>03 / YOUR ORDER</h2>
+
+      <div id="order-items"></div>
+
+      <div class="total">
+        <span>SUBTOTAL</span>
+        <span id="subtotal">0,00 €</span>
+      </div>
+
+      <p class="note">
+        SHIPPING: CALCULATED LATER<br>
+        PAYMENT: NOT CONNECTED
+      </p>
+
+      <button class="button" onclick="demoOrder()">
+        PLACE DEMO ORDER
+      </button>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  VÆLKR — WORN DIFFERENT.
+</footer>
+
+<script>
+function formatPrice(price) {
+  return Number(price).toFixed(2).replace(".", ",") + " €";
+}
+
+let cart = [];
+
+try {
+  cart = JSON.parse(localStorage.getItem("vaelkr-cart")) || [];
+  if (!Array.isArray(cart)) cart = [];
+} catch (error) {
+  cart = [];
+}
+
+const itemsContainer = document.getElementById("order-items");
+const subtotalElement = document.getElementById("subtotal");
+
+if (cart.length === 0) {
+  itemsContainer.innerHTML =
+    '<p class="empty">YOUR BAG IS EMPTY.<br><a href="index.html" style="color:#f1eee7">RETURN TO SHOP</a></p>';
+} else {
+  itemsContainer.innerHTML = cart.map(item => {
+    const details = [
+      item.size ? "SIZE: " + item.size : "",
+      item.customText ? "TEXT: " + item.customText : "",
+      "QUANTITY: " + item.quantity
+    ].filter(Boolean).join("<br>");
+
+    const safeDetails = details.replace(/[&<>"']/g, c => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    })[c]);
+
+    const safeName = String(item.name).replace(/[&<>"']/g, c => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    })[c]);
+
+    return `
+      <div class="order-item">
+        <div>
+          <strong>${safeName}</strong>
+          <p class="muted">${safeDetails}</p>
+        </div>
+        <span>${formatPrice(item.price * item.quantity)}</span>
+      </div>
+    `;
+  }).join("");
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity, 0
+  );
+
+  subtotalElement.textContent = formatPrice(total);
+}
+
+function demoOrder() {
+  if (cart.length === 0) {
+    alert("YOUR BAG IS EMPTY.");
+    return;
+  }
+
+  alert("THIS IS A DEMO. REAL ORDERS AND PAYMENTS ARE NOT CONNECTED YET.");
+}
+</script>
+
+</body>
+</html>
