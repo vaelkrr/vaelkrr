@@ -1032,6 +1032,167 @@ footer {
   }
 }
 
+/* VÆLKR — MOTION UPDATE */
+
+@keyframes vaelkr-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes vaelkr-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes vaelkr-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Entrada de la portada */
+.hero-top {
+  animation: vaelkr-enter .8s ease-out both;
+}
+
+.tag {
+  animation: vaelkr-enter .8s .12s ease-out both;
+}
+
+h1 {
+  animation: vaelkr-enter 1s .2s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.hero-bottom {
+  animation: vaelkr-enter .8s .4s ease-out both;
+}
+
+.hero-mark {
+  animation: vaelkr-float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Enlaces con línea animada */
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 1px;
+  background: #f1eee7;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Botones */
+.hero-button,
+.add-button,
+.checkout-button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease,
+    box-shadow .25s ease;
+}
+
+.hero-button:hover,
+.add-button:hover,
+.checkout-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px #0005;
+}
+
+.hero-button:active,
+.add-button:active,
+.checkout-button:active {
+  transform: scale(.97);
+}
+
+/* Tarjetas */
+.shop-card {
+  transition: transform .35s ease, border-color .35s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-7px);
+}
+
+.shop-image {
+  transition: background .4s ease;
+}
+
+.shop-card:hover .shirt-text {
+  transform: rotate(-3deg) scale(1.07);
+}
+
+.shirt-text {
+  transition: transform .4s ease;
+}
+
+/* Zona visual de los productos */
+.product-visual {
+  transition: border-color .35s ease, background .35s ease;
+}
+
+.product-visual:hover {
+  border-color: #77746d;
+  background: #1e1e1b;
+}
+
+.product-visual .shirt-mockup {
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.product-visual:hover .shirt-mockup {
+  transform: scale(1.035) rotate(-1deg);
+}
+
+/* Fotografías del archivo */
+.gallery figure {
+  overflow: hidden;
+}
+
+.gallery img {
+  transition: transform .7s cubic-bezier(.2,.7,.2,1),
+              filter .5s ease;
+}
+
+.gallery figure:hover img {
+  transform: scale(1.045);
+  filter: contrast(1.08);
+}
+
+/* Accesibilidad: respeta las preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
   </style>
 </head>
 
