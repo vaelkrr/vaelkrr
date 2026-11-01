@@ -5,10 +5,166 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VÆLKR — Worn Different</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #10100f;
+      color: #f1eee7;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 7%;
+      border-bottom: 1px solid #343430;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    nav a {
+      color: #f1eee7;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-left: 20px;
+    }
+
+    main {
+      padding: 100px 7% 80px;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .tag {
+      color: #aaa69c;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(65px, 15vw, 175px);
+      line-height: 0.85;
+      letter-spacing: -0.09em;
+      font-weight: 900;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .slogan {
+      font-size: clamp(16px, 3vw, 25px);
+      letter-spacing: 5px;
+      margin-top: 35px;
+    }
+
+    .description {
+      color: #aaa69c;
+      margin-top: 15px;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    .collection {
+      padding: 35px 7% 80px;
+      border-top: 1px solid #343430;
+    }
+
+    h2 {
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+    }
+
+    .placeholder {
+      border: 1px solid #343430;
+      padding: 55px 20px;
+      color: #aaa69c;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 25px 7%;
+      border-top: 1px solid #343430;
+      color: #77746d;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 9px;
+      }
+
+      main {
+        padding: 100px 5%;
+      }
+
+      .collection {
+        padding: 35px 5% 60px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>VÆLKR</h1>
-  <p>WORN DIFFERENT.</p>
-  <p>Hand-painted. One of a kind.</p>
+
+  <header>
+    <div class="logo">VÆLKR®</div>
+    <nav>
+      <a href="#collection">COLLECTION</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tag">INDEPENDENT CLOTHING PROJECT</p>
+    <h1><span>WORN</span><span>DIFFERENT.</span></h1>
+    <p class="slogan">NOT MADE TO FIT IN.</p>
+    <p class="description">
+      Hand-painted pieces.<br>
+      Made by hand. Made to stand out.
+    </p>
+  </main>
+
+  <section class="collection" id="collection">
+    <h2>01 / THE COLLECTION</h2>
+    <div class="placeholder">
+      YOUR NEXT FAVOURITE PIECE.<br>
+      COMING SOON.
+    </div>
+  </section>
+
+  <section class="collection" id="about">
+    <h2>02 / ABOUT VÆLKR</h2>
+    <p class="description">
+      Not mass-produced. Not ordinary.<br>
+      Every piece starts with an idea and a pair of hands.
+    </p>
+  </section>
+
+  <footer>VÆLKR — WORN DIFFERENT.</footer>
+
 </body>
 </html>
