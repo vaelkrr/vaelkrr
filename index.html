@@ -14,9 +14,7 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: #10100f;
@@ -38,15 +36,24 @@
       letter-spacing: -2px;
     }
 
-    nav a {
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a, .cart-trigger {
       color: #f1eee7;
       text-decoration: none;
       font-size: 11px;
       letter-spacing: 2px;
-      margin-left: 20px;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
     }
 
-    nav a:hover {
+    nav a:hover, .cart-trigger:hover {
       color: #aaa69c;
     }
 
@@ -86,9 +93,7 @@
       font-weight: 900;
     }
 
-    h1 span {
-      display: block;
-    }
+    h1 span { display: block; }
 
     h1 .outline {
       color: transparent;
@@ -128,9 +133,7 @@
       transition: background 0.2s;
     }
 
-    .hero-button:hover {
-      background: #aaa69c;
-    }
+    .hero-button:hover { background: #aaa69c; }
 
     .hero-mark {
       position: absolute;
@@ -189,9 +192,7 @@
       transition: background 0.25s;
     }
 
-    .shop-card:hover .shop-image {
-      background: #242420;
-    }
+    .shop-card:hover .shop-image { background: #242420; }
 
     .shirt-text {
       font-size: clamp(20px, 3vw, 36px);
@@ -211,9 +212,7 @@
       letter-spacing: -1px;
     }
 
-    .shop-info {
-      padding-top: 16px;
-    }
+    .shop-info { padding-top: 16px; }
 
     .shop-info h3 {
       font-size: 13px;
@@ -240,6 +239,242 @@
       font-size: 9px;
       letter-spacing: 2px;
       margin-top: 10px;
+    }
+
+    /* PRODUCTO */
+
+    .product {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 55px;
+      margin-top: 35px;
+      align-items: start;
+    }
+
+    .product-visual {
+      min-height: 480px;
+      background: #191917;
+      border: 1px solid #343430;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .shirt-mockup {
+      width: 75%;
+      max-width: 390px;
+      aspect-ratio: 0.85;
+      background: #080808;
+      clip-path: polygon(25% 5%, 38% 0, 62% 0, 75% 5%, 100% 22%, 85% 42%, 75% 34%, 75% 100%, 25% 100%, 25% 34%, 15% 42%, 0 22%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15%;
+      filter: drop-shadow(0 15px 20px #000);
+    }
+
+    .shirt-mockup span {
+      color: #ed8cbd;
+      font-size: clamp(22px, 4vw, 43px);
+      font-weight: 900;
+      letter-spacing: -3px;
+      text-align: center;
+      transform: rotate(-4deg);
+    }
+
+    .product-details { padding-top: 10px; }
+
+    .product-category {
+      color: #77746d;
+      font-size: 10px;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .product-details h3 {
+      font-size: clamp(27px, 4vw, 42px);
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
+
+    .product-price {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .product-description {
+      color: #aaa69c;
+      font-size: 12px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .size-select {
+      width: 100%;
+      padding: 15px;
+      background: #191917;
+      color: #f1eee7;
+      border: 1px solid #494943;
+      font-family: inherit;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .add-button {
+      width: 100%;
+      padding: 18px;
+      border: 1px solid #f1eee7;
+      background: #f1eee7;
+      color: #10100f;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .add-button:hover {
+      background: transparent;
+      color: #f1eee7;
+    }
+
+    .product-note {
+      color: #77746d;
+      font-size: 10px;
+      line-height: 1.7;
+      margin-top: 18px;
+    }
+
+    /* CARRITO */
+
+    .cart-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+      z-index: 20;
+    }
+
+    .cart-overlay.open { display: block; }
+
+    .cart-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: min(440px, 100%);
+      height: 100%;
+      background: #10100f;
+      border-left: 1px solid #343430;
+      padding: 30px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #343430;
+    }
+
+    .cart-header h2 { margin: 0; }
+
+    .close-cart {
+      background: none;
+      border: none;
+      color: #f1eee7;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .cart-items { flex: 1; }
+
+    .empty-cart {
+      color: #77746d;
+      font-size: 12px;
+      line-height: 1.7;
+      padding: 35px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 22px 0;
+      border-bottom: 1px solid #343430;
+    }
+
+    .cart-item h3 {
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .cart-item p {
+      color: #aaa69c;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .cart-item-price {
+      text-align: right;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .remove-item {
+      background: none;
+      border: none;
+      color: #77746d;
+      text-decoration: underline;
+      font-size: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .cart-summary {
+      border-top: 1px solid #343430;
+      padding-top: 22px;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .checkout-button {
+      display: block;
+      width: 100%;
+      padding: 17px;
+      background: #f1eee7;
+      color: #10100f;
+      border: 0;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .checkout-button:hover { background: #aaa69c; }
+
+    .checkout-note {
+      color: #77746d;
+      font-size: 10px;
+      line-height: 1.6;
+      margin-top: 13px;
     }
 
     /* COLECCIONES */
@@ -293,9 +528,7 @@
       margin-top: 30px;
     }
 
-    .gallery figure {
-      min-width: 0;
-    }
+    .gallery figure { min-width: 0; }
 
     .gallery img {
       display: block;
@@ -326,24 +559,16 @@
     }
 
     @media (max-width: 800px) {
-      .shop-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .shop-image {
-        height: 280px;
-      }
+      .shop-grid { grid-template-columns: 1fr 1fr; }
+      .shop-image { height: 280px; }
+      .product { gap: 25px; }
+      .product-visual { min-height: 380px; }
     }
 
     @media (max-width: 600px) {
-      header {
-        padding: 20px 5%;
-      }
-
-      nav a {
-        margin-left: 10px;
-        font-size: 9px;
-      }
+      header { padding: 20px 5%; }
+      nav { gap: 10px; }
+      nav a, .cart-trigger { font-size: 9px; letter-spacing: 1px; }
 
       main {
         min-height: 75vh;
@@ -361,30 +586,25 @@
         flex-direction: column;
       }
 
-      .hero-mark {
-        top: 28%;
-        right: 0;
-      }
+      .hero-mark { top: 28%; right: 0; }
 
-      .section {
-        padding: 45px 5% 60px;
-      }
+      .section { padding: 45px 5% 60px; }
 
-      .shop-grid {
+      .shop-grid { grid-template-columns: 1fr; }
+      .shop-image { height: 360px; }
+
+      .product {
         grid-template-columns: 1fr;
+        gap: 25px;
       }
 
-      .shop-image {
-        height: 360px;
-      }
+      .product-visual { min-height: 400px; }
 
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+      .gallery { grid-template-columns: 1fr; }
 
-      footer {
-        padding: 25px 5%;
-      }
+      .cart-panel { padding: 25px 20px; }
+
+      footer { padding: 25px 5%; }
     }
   </style>
 </head>
@@ -396,6 +616,9 @@
     <nav>
       <a href="#shop">SHOP</a>
       <a href="#about">ABOUT</a>
+      <button class="cart-trigger" onclick="openCart()">
+        BAG (<span id="cart-count">0</span>)
+      </button>
     </nav>
   </header>
 
@@ -447,7 +670,7 @@
         <div class="shop-info">
           <h3>BASIC / TEXT</h3>
           <p>Statement text. Nothing else needed.</p>
-          <span class="shop-price">FROM 11,90 €</span>
+          <span class="shop-price">FROM 12,90 €</span>
           <span class="shop-label">01 — EXPLORE</span>
         </div>
       </a>
@@ -487,11 +710,52 @@
         <h3>01 — BASIC / TEXT</h3>
         <span>11,90–13,90 €</span>
       </div>
+
       <p>
         Bold statements. Clean designs.
         Text placed front or back. Nothing unnecessary.
       </p>
-      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
+
+      <div class="product">
+
+        <div class="product-visual">
+          <div class="shirt-mockup">
+            <span>FUCK<br>OFF.</span>
+          </div>
+        </div>
+
+        <div class="product-details">
+          <p class="product-category">BASIC / TEXT — 001</p>
+          <h3>FUCK OFF.</h3>
+          <p class="product-price">12,90 €</p>
+
+          <p class="product-description">
+            Black T-shirt. Pink statement lettering.
+            No unnecessary details. Made to stand out.
+          </p>
+
+          <label class="field-label" for="size">SELECT SIZE</label>
+          <select class="size-select" id="size">
+            <option value="">CHOOSE YOUR SIZE</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+
+          <button class="add-button" onclick="addToCart()">
+            ADD TO BAG
+          </button>
+
+          <p class="product-note">
+            VÆLKR® — WORN DIFFERENT.<br>
+            Product availability will be confirmed before purchase.
+          </p>
+        </div>
+
+      </div>
     </div>
 
     <!-- ESSENTIALS -->
@@ -501,10 +765,12 @@
         <h3>02 — ESSENTIALS</h3>
         <span>FROM 17,90 €</span>
       </div>
+
       <p>
         Original VÆLKR designs, reproduced in small quantities.
         Made to be worn differently.
       </p>
+
       <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
     </div>
 
@@ -515,10 +781,12 @@
         <h3>03 — ONE OF ONE</h3>
         <span>24,90–29,90 €</span>
       </div>
+
       <p>
         Hand-painted pieces. Unique designs.
         No two pieces have to be exactly alike.
       </p>
+
       <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
     </div>
   </section>
@@ -565,6 +833,161 @@
   <footer>
     VÆLKR — WORN DIFFERENT.
   </footer>
+
+  <!-- CART -->
+
+  <div class="cart-overlay" id="cart-overlay" onclick="overlayClick(event)">
+    <aside class="cart-panel" aria-label="Shopping cart">
+      <div class="cart-header">
+        <h2>YOUR BAG</h2>
+        <button class="close-cart" onclick="closeCart()" aria-label="Close cart">×</button>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+        <p class="empty-cart">YOUR BAG IS EMPTY.</p>
+      </div>
+
+      <div class="cart-summary">
+        <div class="cart-total">
+          <span>SUBTOTAL</span>
+          <strong id="cart-total">0,00 €</strong>
+        </div>
+
+        <button class="checkout-button" onclick="checkout()">
+          CONTINUE TO CHECKOUT
+        </button>
+
+        <p class="checkout-note">
+          Shipping costs and payment options will be shown when checkout is connected.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const PRODUCT_PRICE = 12.90;
+    const PRODUCT_NAME = "FUCK OFF.";
+    let cart = [];
+
+    try {
+      cart = JSON.parse(localStorage.getItem("vaelkr-cart")) || [];
+      if (!Array.isArray(cart)) cart = [];
+    } catch (error) {
+      cart = [];
+    }
+
+    function saveCart() {
+      localStorage.setItem("vaelkr-cart", JSON.stringify(cart));
+    }
+
+    function formatPrice(price) {
+      return price.toFixed(2).replace(".", ",") + " €";
+    }
+
+    function addToCart() {
+      const size = document.getElementById("size").value;
+
+      if (!size) {
+        alert("PLEASE SELECT A SIZE FIRST.");
+        return;
+      }
+
+      const existingItem = cart.find(item =>
+        item.name === PRODUCT_NAME && item.size === size
+      );
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          name: PRODUCT_NAME,
+          size: size,
+          price: PRODUCT_PRICE,
+          quantity: 1
+        });
+      }
+
+      saveCart();
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      const itemsContainer = document.getElementById("cart-items");
+      const countElement = document.getElementById("cart-count");
+      const totalElement = document.getElementById("cart-total");
+
+      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity, 0
+      );
+
+      countElement.textContent = totalQuantity;
+      totalElement.textContent = formatPrice(totalPrice);
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML =
+          '<p class="empty-cart">YOUR BAG IS EMPTY.</p>';
+        return;
+      }
+
+      itemsContainer.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <div>
+            <h3>${item.name}</h3>
+            <p>SIZE: ${item.size}</p>
+            <p>QUANTITY: ${item.quantity}</p>
+            <button class="remove-item" onclick="removeItem(${index})">
+              REMOVE
+            </button>
+          </div>
+          <div class="cart-item-price">
+            ${formatPrice(item.price * item.quantity)}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      updateCart();
+    }
+
+    function openCart() {
+      document.getElementById("cart-overlay").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+      document.getElementById("cart-overlay").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function overlayClick(event) {
+      if (event.target.id === "cart-overlay") {
+        closeCart();
+      }
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("YOUR BAG IS EMPTY.");
+        return;
+      }
+
+      alert(
+        "YOUR BAG IS READY! Online payment is not connected yet. " +
+        "We will set up the secure checkout in the next step."
+      );
+    }
+
+    updateCart();
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeCart();
+    });
+  </script>
 
 </body>
 </html>
