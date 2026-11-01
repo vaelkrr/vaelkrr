@@ -5,7 +5,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VÆLKR — Worn Different</title>
-  <style>
+  <sty
+    main {
+      position: relative;
+      min-height: 78vh;
+      overflow: hidden;
+      padding-top: 45px;
+      padding-bottom: 65px;
+    }
+
+    .hero-top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: #77746d;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-bottom: 100px;
+    }
+
+    .tag {
+      color: #b9b4a9;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(58px, 13.5vw, 165px);
+      letter-spacing: -0.095em;
+    }
+
+    h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px #f1eee7;
+    }
+
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .hero-button {
+      color: #10100f;
+      background: #f1eee7;
+      text-decoration: none;
+      padding: 17px 20px;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .hero-button:hover {
+      background: #aaa69c;
+    }
+
+    .hero-mark {
+      position: absolute;
+      z-index: 0;
+      right: 4%;
+      top: 23%;
+      color: #1c1c19;
+      font-size: clamp(200px, 35vw, 440px);
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        min-height: 75vh;
+      }
+
+      .hero-top {
+        margin-bottom: 90px;
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-mark {
+        top: 28%;
+        right: 0;
+      }
+    }
+le>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -175,15 +271,37 @@ le>
     </nav>
   </header>
 
-  <main>
-    <p class="tag">INDEPENDENT CLOTHING PROJECT</p>
-    <h1><span>WORN</span><span>DIFFERENT.</span></h1>
-    <p class="slogan">NOT MADE TO FIT IN.</p>
-    <p class="description">
-      Hand-painted pieces.<br>
-      Made by hand. Made to stand out.
-    </p>
-  </main>
+
+<main>
+  <div class="hero-top">
+    <span>INDEPENDENT LABEL — EST. 2026</span>
+    <span>001 / ORIGINAL PIECES</span>
+  </div>
+
+  <p class="tag">NOT HERE TO FOLLOW.</p>
+
+  <h1>
+    <span>WORN</span>
+    <span class="outline">DIFFERENT.</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <div>
+      <p class="slogan">NOT MADE TO FIT IN.</p>
+      <p class="description">
+        Hand-painted clothing.<br>
+        Original ideas. No copies.
+      </p>
+    </div>
+
+    <a class="hero-button" href="#collection">
+      EXPLORE THE ARCHIVE ↘
+    </a>
+  </div>
+
+  <div class="hero-mark" aria-hidden="true">Æ</div>
+</main>
+
 
 
 <section class="collection" id="collection">
