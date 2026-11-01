@@ -1294,6 +1294,48 @@ main::after {
   }
 }
 
+/* VÆLKR — CUSTOM CURSOR */
+
+@media (hover: hover) and (pointer: fine) {
+  body,
+  body a,
+  body button,
+  body input,
+  body select {
+    cursor: none;
+  }
+
+  .vaelkr-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f1eee7;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition:
+      width .2s ease,
+      height .2s ease,
+      background .2s ease,
+      opacity .2s ease;
+    mix-blend-mode: difference;
+    opacity: 0;
+  }
+
+  .vaelkr-cursor.is-visible {
+    opacity: 1;
+  }
+
+  .vaelkr-cursor.is-hovering {
+    width: 34px;
+    height: 34px;
+    background: #f1eee7;
+  }
+}
+
   </style>
 </head>
 
@@ -1848,6 +1890,47 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach((element) => element.classList.add("visible"));
   }
 });
+
+/* VÆLKR — CUSTOM CURSOR */
+(() => {
+  if (
+    !window.matchMedia("(hover: hover) and (pointer: fine)").matches ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
+
+  const cursor = document.createElement("div");
+  cursor.className = "vaelkr-cursor";
+  cursor.setAttribute("aria-hidden", "true");
+  document.body.appendChild(cursor);
+
+  document.addEventListener("mousemove", (event) => {
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+    cursor.classList.add("is-visible");
+  });
+
+  document.addEventListener("mouseover", (event) => {
+    if (event.target.closest("a, button, input, select, label")) {
+      cursor.classList.add("is-hovering");
+    } else {
+      cursor.classList.remove("is-hovering");
+    }
+  });
+
+  document.addEventListener("mouseout", (event) => {
+    if (!event.relatedTarget) {
+      cursor.classList.remove("is-visible");
+    }
+  });
+
+  document.addEventListener("mouseleave", () => {
+    cursor.classList.remove("is-visible");
+  });
+
+  document.addEventListener("mouseenter", () => {
+    cursor.classList.add("is-visible");
+  });
+})();
 
 </body>
 </html>
