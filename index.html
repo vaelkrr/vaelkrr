@@ -1167,7 +1167,7 @@ function addToCart() {
   addItem(PRODUCT_NAME, size, PRODUCT_PRICE);
 }
 
-function addCustomToCart() {
+window.addCustomToCart = function() {
   const text = document.getElementById("custom-text").value.trim();
   const size = document.getElementById("custom-size").value;
 
