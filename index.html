@@ -4,108 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10100f">
   <title>VÆLKR — Worn Different</title>
-  <sty
-    main {
-      position: relative;
-      min-height: 78vh;
-      overflow: hidden;
-      padding-top: 45px;
-      padding-bottom: 65px;
-    }
 
-    .hero-top {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      color: #77746d;
-      font-size: 9px;
-      letter-spacing: 2px;
-      margin-bottom: 100px;
-    }
-
-    .tag {
-      color: #b9b4a9;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      position: relative;
-      z-index: 1;
-      font-size: clamp(58px, 13.5vw, 165px);
-      letter-spacing: -0.095em;
-    }
-
-    h1 .outline {
-      color: transparent;
-      -webkit-text-stroke: 1px #f1eee7;
-    }
-
-    .hero-bottom {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .hero-button {
-      color: #10100f;
-      background: #f1eee7;
-      text-decoration: none;
-      padding: 17px 20px;
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .hero-button:hover {
-      background: #aaa69c;
-    }
-
-    .hero-mark {
-      position: absolute;
-      z-index: 0;
-      right: 4%;
-      top: 23%;
-      color: #1c1c19;
-      font-size: clamp(200px, 35vw, 440px);
-      font-weight: 900;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        min-height: 75vh;
-      }
-
-      .hero-top {
-        margin-bottom: 90px;
-        font-size: 8px;
-        letter-spacing: 1px;
-      }
-
-      .hero-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero-mark {
-        top: 28%;
-        right: 0;
-      }
-    }
-le>
+  <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -136,26 +46,43 @@ le>
       margin-left: 20px;
     }
 
+    nav a:hover {
+      color: #aaa69c;
+    }
+
     main {
-      padding: 100px 7% 80px;
-      min-height: 75vh;
+      position: relative;
+      min-height: 78vh;
+      overflow: hidden;
+      padding: 45px 7% 65px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: #77746d;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-bottom: 100px;
     }
 
     .tag {
-      color: #aaa69c;
+      color: #b9b4a9;
       font-size: 11px;
       letter-spacing: 4px;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
     }
 
     h1 {
-      font-size: clamp(65px, 15vw, 175px);
-      line-height: 0.85;
-      letter-spacing: -0.09em;
+      position: relative;
+      z-index: 1;
+      font-size: clamp(58px, 13.5vw, 165px);
+      line-height: 0.88;
+      letter-spacing: -0.095em;
       font-weight: 900;
     }
 
@@ -163,10 +90,24 @@ le>
       display: block;
     }
 
+    h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px #f1eee7;
+    }
+
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
     .slogan {
-      font-size: clamp(16px, 3vw, 25px);
-      letter-spacing: 5px;
-      margin-top: 35px;
+      font-size: 15px;
+      letter-spacing: 3px;
     }
 
     .description {
@@ -176,8 +117,35 @@ le>
       font-size: 13px;
     }
 
+    .hero-button {
+      color: #10100f;
+      background: #f1eee7;
+      text-decoration: none;
+      padding: 17px 20px;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: background 0.2s;
+    }
+
+    .hero-button:hover {
+      background: #aaa69c;
+    }
+
+    .hero-mark {
+      position: absolute;
+      z-index: 0;
+      right: 4%;
+      top: 23%;
+      color: #1c1c19;
+      font-size: clamp(200px, 35vw, 440px);
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+    }
+
     .collection {
-      padding: 35px 7% 80px;
+      padding: 55px 7% 80px;
       border-top: 1px solid #343430;
     }
 
@@ -187,42 +155,6 @@ le>
       margin-bottom: 25px;
     }
 
-    .placeholder {
-      border: 1px solid #343430;
-      padding: 55px 20px;
-      color: #aaa69c;
-      text-align: center;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    footer {
-      padding: 25px 7%;
-      border-top: 1px solid #343430;
-      color: #77746d;
-      font-size: 10px;
-      letter-spacing: 2px;
-    }
-
-    @media (max-width: 480px) {
-      header {
-        padding: 20px 5%;
-      }
-
-      nav a {
-        margin-left: 10px;
-        font-size: 9px;
-      }
-
-      main {
-        padding: 100px 5%;
-      }
-
-      .collection {
-        padding: 35px 5% 60px;
-      }
-    }
-  </sty
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -254,13 +186,60 @@ le>
       letter-spacing: 1.5px;
     }
 
-    @media (max-width: 480px) {
+    footer {
+      padding: 25px 7%;
+      border-top: 1px solid #343430;
+      color: #77746d;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 9px;
+      }
+
+      main {
+        min-height: 75vh;
+        padding: 45px 5%;
+      }
+
+      .hero-top {
+        margin-bottom: 90px;
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero-mark {
+        top: 28%;
+        right: 0;
+      }
+
+      .collection {
+        padding: 40px 5% 60px;
+      }
+
       .gallery {
         grid-template-columns: 1fr;
       }
+
+      footer {
+        padding: 25px 5%;
+      }
     }
-le>
+  </style>
 </head>
+
 <body>
 
   <header>
@@ -271,74 +250,74 @@ le>
     </nav>
   </header>
 
-
-<main>
-  <div class="hero-top">
-    <span>INDEPENDENT LABEL — EST. 2026</span>
-    <span>001 / ORIGINAL PIECES</span>
-  </div>
-
-  <p class="tag">NOT HERE TO FOLLOW.</p>
-
-  <h1>
-    <span>WORN</span>
-    <span class="outline">DIFFERENT.</span>
-  </h1>
-
-  <div class="hero-bottom">
-    <div>
-      <p class="slogan">NOT MADE TO FIT IN.</p>
-      <p class="description">
-        Hand-painted clothing.<br>
-        Original ideas. No copies.
-      </p>
+  <main>
+    <div class="hero-top">
+      <span>INDEPENDENT LABEL — EST. 2026</span>
+      <span>001 / ORIGINAL PIECES</span>
     </div>
 
-    <a class="hero-button" href="#collection">
-      EXPLORE THE ARCHIVE ↘
-    </a>
-  </div>
+    <p class="tag">NOT HERE TO FOLLOW.</p>
 
-  <div class="hero-mark" aria-hidden="true">Æ</div>
-</main>
+    <h1>
+      <span>WORN</span>
+      <span class="outline">DIFFERENT.</span>
+    </h1>
 
+    <div class="hero-bottom">
+      <div>
+        <p class="slogan">NOT MADE TO FIT IN.</p>
+        <p class="description">
+          Hand-painted clothing.<br>
+          Original ideas. No copies.
+        </p>
+      </div>
 
+      <a class="hero-button" href="#collection">
+        EXPLORE THE ARCHIVE ↘
+      </a>
+    </div>
 
-<section class="collection" id="collection">
-  <h2>01 / THE ARCHIVE</h2>
-  <p class="description">
-    EVERY PIECE HAS A STORY.
-  </p>
+    <div class="hero-mark" aria-hidden="true">Æ</div>
+  </main>
 
-  <div class="gallery">
-    <figure>
-      <img src="boceto.jpg" alt="Proceso de creación de la primera camiseta VÆLKR">
-      <figcaption>
-        <span>01 — THE PROCESS</span>
-        <span>HANDMADE</span>
-      </figcaption>
-    </figure>
+  <section class="collection" id="collection">
+    <h2>01 / THE ARCHIVE</h2>
 
-    <figure>
-      <img src="primer diseño.jpg" alt="Diseño original de la primera camiseta VÆLKR">
-      <figcaption>
-        <span>02 — THE FIRST PIECE</span>
-        <span>ONE OF ONE</span>
-      </figcaption>
-    </figure>
-  </div>
-</section>
+    <p class="description">
+      EVERY PIECE HAS A STORY.
+    </p>
 
+    <div class="gallery">
+      <figure>
+        <img src="boceto.jpg" alt="Proceso de creación de VÆLKR">
+        <figcaption>
+          <span>01 — THE PROCESS</span>
+          <span>HANDMADE</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="primer diseño.jpg" alt="Primera camiseta VÆLKR">
+        <figcaption>
+          <span>02 — THE FIRST PIECE</span>
+          <span>ONE OF ONE</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
 
   <section class="collection" id="about">
     <h2>02 / ABOUT VÆLKR</h2>
+
     <p class="description">
       Not mass-produced. Not ordinary.<br>
       Every piece starts with an idea and a pair of hands.
     </p>
   </section>
 
-  <footer>VÆLKR — WORN DIFFERENT.</footer>
+  <footer>
+    VÆLKR — WORN DIFFERENT.
+  </footer>
 
 </body>
 </html>
