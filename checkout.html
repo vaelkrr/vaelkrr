@@ -142,6 +142,8 @@ input:focus {
   font-size: 10px;
   letter-spacing: 2px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
 
 .button:hover {
@@ -162,6 +164,66 @@ footer {
   letter-spacing: 2px;
 }
 
+.confirmation {
+  display: none;
+  max-width: 720px;
+  margin: 100px auto;
+  padding: 0 25px;
+}
+
+.confirmation .eyebrow {
+  color: #aaa69c;
+  font-size: 10px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.confirmation h1 {
+  font-size: clamp(45px, 9vw, 90px);
+  line-height: 0.95;
+  margin-bottom: 25px;
+}
+
+.confirmation .message {
+  color: #aaa69c;
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+.reference {
+  border-top: 1px solid #343430;
+  border-bottom: 1px solid #343430;
+  padding: 25px 0;
+  margin-top: 45px;
+}
+
+.reference span {
+  display: block;
+  color: #77746d;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.reference strong {
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+
+.confirmation-order {
+  margin-top: 35px;
+}
+
+.confirmation-order h2 {
+  margin-bottom: 10px;
+}
+
+.confirmation .button {
+  max-width: 300px;
+  margin-top: 35px;
+}
+
 @media(max-width: 700px) {
   .checkout-grid {
     grid-template-columns: 1fr;
@@ -170,6 +232,10 @@ footer {
 
   main {
     margin: 40px auto;
+  }
+
+  .confirmation {
+    margin: 70px auto;
   }
 }
 </style>
@@ -182,7 +248,7 @@ footer {
   <a href="index.html">← BACK TO SHOP</a>
 </header>
 
-<main>
+<main id="checkout-page">
 
   <h1>CHECKOUT.</h1>
   <p class="intro">ALMOST YOURS. COMPLETE YOUR ORDER.</p>
@@ -248,6 +314,39 @@ footer {
   </div>
 </main>
 
+<section class="confirmation" id="confirmation">
+  <p class="eyebrow">VÆLKR® / ORDER STATUS</p>
+
+  <h1>ORDER<br>RECEIVED.</h1>
+
+  <p class="message">
+    THIS IS WHAT YOUR ORDER CONFIRMATION WOULD LOOK LIKE.
+    THANK YOU FOR BEING PART OF VÆLKR.
+  </p>
+
+  <div class="reference">
+    <span>DEMO REFERENCE</span>
+    <strong id="reference-number"></strong>
+  </div>
+
+  <div class="confirmation-order">
+    <h2>YOUR ORDER</h2>
+    <div id="confirmation-items"></div>
+
+    <div class="total">
+      <span>SUBTOTAL</span>
+      <span id="confirmation-total">0,00 €</span>
+    </div>
+  </div>
+
+  <p class="note">
+    DEMONSTRATION ONLY — NO REAL ORDER HAS BEEN PLACED.
+    NO PAYMENT OR SHIPPING HAS BEEN PROCESSED.
+  </p>
+
+  <a class="button" href="index.html">BACK TO SHOP</a>
+</section>
+
 <footer>
   VÆLKR — WORN DIFFERENT.
 </footer>
@@ -255,6 +354,16 @@ footer {
 <script>
 function formatPrice(price) {
   return Number(price).toFixed(2).replace(".", ",") + " €";
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[c]);
 }
 
 let cart = [];
@@ -269,49 +378,38 @@ try {
 const itemsContainer = document.getElementById("order-items");
 const subtotalElement = document.getElementById("subtotal");
 
-if (cart.length === 0) {
-  itemsContainer.innerHTML =
-    '<p class="empty">YOUR BAG IS EMPTY.<br><a href="index.html" style="color:#f1eee7">RETURN TO SHOP</a></p>';
-} else {
-  itemsContainer.innerHTML = cart.map(item => {
+function renderItems(container) {
+  container.innerHTML = cart.map(item => {
     const details = [
       item.size ? "SIZE: " + item.size : "",
       item.customText ? "TEXT: " + item.customText : "",
       "QUANTITY: " + item.quantity
-    ].filter(Boolean).join("<br>");
-
-    const safeDetails = details.replace(/[&<>"']/g, c => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;"
-    })[c]);
-
-    const safeName = String(item.name).replace(/[&<>"']/g, c => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#039;"
-    })[c]);
+    ].filter(Boolean).map(escapeHTML).join("<br>");
 
     return `
       <div class="order-item">
         <div>
-          <strong>${safeName}</strong>
-          <p class="muted">${safeDetails}</p>
+          <strong>${escapeHTML(item.name)}</strong>
+          <p class="muted">${details}</p>
         </div>
-        <span>${formatPrice(item.price * item.quantity)}</span>
+        <span>${formatPrice(Number(item.price) * Number(item.quantity))}</span>
       </div>
     `;
   }).join("");
+}
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity, 0
+function getTotal() {
+  return cart.reduce(
+    (sum, item) => sum + Number(item.price) * Number(item.quantity), 0
   );
+}
 
-  subtotalElement.textContent = formatPrice(total);
+if (cart.length === 0) {
+  itemsContainer.innerHTML =
+    '<p class="empty">YOUR BAG IS EMPTY.<br><a href="index.html" style="color:#f1eee7">RETURN TO SHOP</a></p>';
+} else {
+  renderItems(itemsContainer);
+  subtotalElement.textContent = formatPrice(getTotal());
 }
 
 function demoOrder() {
@@ -320,7 +418,17 @@ function demoOrder() {
     return;
   }
 
-  alert("THIS IS A DEMO. REAL ORDERS AND PAYMENTS ARE NOT CONNECTED YET.");
+  const reference = "VKL-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+
+  document.getElementById("reference-number").textContent = reference;
+
+  renderItems(document.getElementById("confirmation-items"));
+  document.getElementById("confirmation-total").textContent = formatPrice(getTotal());
+
+  document.getElementById("checkout-page").style.display = "none";
+  document.getElementById("confirmation").style.display = "block";
+
+  window.scrollTo(0, 0);
 }
 </script>
 
