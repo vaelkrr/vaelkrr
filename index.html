@@ -609,6 +609,429 @@
 
       footer { padding: 25px 5%; }
     }
+    
+/* ===== VÆLKR — VISUAL UPGRADE ===== */
+
+:root {
+  --bg: #10100f;
+  --surface: #171715;
+  --surface-hover: #20201d;
+  --cream: #f1eee7;
+  --muted: #aaa69c;
+  --line: #343430;
+}
+
+/* Fondo y selección */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25px;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, #1b1b18 0%, transparent 48%),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--cream);
+  color: var(--bg);
+}
+
+/* Cabecera más refinada */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: rgba(16, 16, 15, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-color 0.25s;
+}
+
+.logo {
+  letter-spacing: -2.5px;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.72;
+}
+
+nav a,
+.cart-trigger {
+  position: relative;
+  transition: color 0.2s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--cream);
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Portada editorial */
+main {
+  min-height: 82vh;
+  isolation: isolate;
+}
+
+.hero-top {
+  text-transform: uppercase;
+}
+
+.tag {
+  font-weight: 600;
+}
+
+h1 {
+  text-wrap: balance;
+}
+
+h1 .outline {
+  -webkit-text-stroke: 1px rgba(241, 238, 231, 0.8);
+  transition: color 0.3s;
+}
+
+main:hover h1 .outline {
+  -webkit-text-stroke-color: var(--cream);
+}
+
+.hero-mark {
+  color: #22221e;
+  opacity: 0.7;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+main:hover .hero-mark {
+  transform: rotate(-7deg) scale(1.025);
+  opacity: 0.95;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  transition: background 0.25s, color 0.25s;
+}
+
+/* Separación y títulos */
+.section {
+  position: relative;
+}
+
+.section > h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.section > h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.section-intro {
+  max-width: 520px;
+}
+
+/* Colecciones: tarjetas más premium */
+.shop-grid {
+  gap: 16px;
+}
+
+.shop-card {
+  overflow: hidden;
+}
+
+.shop-image {
+  position: relative;
+  height: 370px;
+  background:
+    radial-gradient(ellipse at center, #252521 0%, #191917 70%);
+  border-color: #3a3a35;
+  transition:
+    background 0.35s,
+    border-color 0.35s;
+}
+
+.shop-image::after {
+  content: "VÆLKR® — 001";
+  position: absolute;
+  left: 14px;
+  bottom: 13px;
+  color: #77746d;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.shop-card:hover .shop-image {
+  background:
+    radial-gradient(ellipse at center, #30302a 0%, #1a1a17 75%);
+  border-color: #77746d;
+}
+
+.shirt-text {
+  transition: transform 0.35s ease;
+}
+
+.shop-card:hover .shirt-text {
+  transform: rotate(-3deg) scale(1.07);
+}
+
+.shop-card:hover .shirt-text.small {
+  transform: scale(1.07);
+}
+
+.shop-card:hover .shirt-text.back {
+  transform: scale(1.07);
+}
+
+.shop-info h3 {
+  transition: color 0.2s;
+}
+
+.shop-card:hover .shop-info h3 {
+  color: #c9c3b7;
+}
+
+.shop-price {
+  letter-spacing: 0.4px;
+}
+
+.shop-label {
+  transition: color 0.2s;
+}
+
+.shop-card:hover .shop-label {
+  color: var(--cream);
+}
+
+/* Productos */
+.collection-block {
+  scroll-margin-top: 100px;
+}
+
+.collection-heading {
+  border-bottom: 1px solid #292925;
+  padding-bottom: 15px;
+}
+
+.product {
+  gap: clamp(25px, 5vw, 65px);
+}
+
+.product-visual {
+  background:
+    radial-gradient(ellipse at center, #252521 0%, #171715 72%);
+  border-color: #3a3a35;
+}
+
+.shirt-mockup {
+  transition: transform 0.4s ease;
+}
+
+.product-visual:hover .shirt-mockup {
+  transform: translateY(-5px);
+}
+
+.product-details h3 {
+  line-height: 1.05;
+}
+
+.product-description {
+  max-width: 390px;
+}
+
+.size-select {
+  border-radius: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.size-select:focus {
+  border-color: var(--cream);
+  outline: none;
+}
+
+.add-button,
+.checkout-button {
+  min-height: 52px;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.add-button:hover {
+  border-color: var(--cream);
+}
+
+/* Colecciones futuras */
+.coming-soon {
+  background: linear-gradient(110deg, #171715, #111110);
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.coming-soon:hover {
+  border-color: #77746d;
+  color: var(--muted);
+}
+
+/* Archivo: fotografías */
+.gallery {
+  gap: 22px;
+}
+
+.gallery figure {
+  overflow: hidden;
+}
+
+.gallery img {
+  transition:
+    filter 0.45s ease,
+    transform 0.6s ease;
+}
+
+.gallery figure:hover img {
+  filter: saturate(1) contrast(1.04);
+  transform: scale(1.025);
+}
+
+.gallery figcaption {
+  text-transform: uppercase;
+}
+
+/* Carrito: mantener toda su funcionalidad */
+.cart-overlay {
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.cart-panel {
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.22);
+}
+
+.cart-item {
+  transition: border-color 0.2s;
+}
+
+.cart-item:hover {
+  border-bottom-color: #77746d;
+}
+
+.remove-item:hover {
+  color: var(--cream);
+}
+
+.checkout-button:hover {
+  background: #c9c3b7;
+}
+
+/* Pie de página */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Animaciones suaves y accesibles */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Adaptación a móvil */
+@media (max-width: 800px) {
+  .shop-image {
+    height: 310px;
+  }
+
+  .product-visual {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    position: sticky;
+    padding: 17px 5%;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  main {
+    min-height: 76vh;
+  }
+
+  .hero-top {
+    margin-bottom: 75px;
+  }
+
+  .hero-bottom {
+    gap: 25px;
+    margin-top: 32px;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+
+  .shop-grid {
+    gap: 30px;
+  }
+
+  .shop-image {
+    height: 350px;
+  }
+
+  .product-visual {
+    min-height: 360px;
+  }
+
+  .collection-block {
+    padding: 45px 0;
+  }
+
+  .gallery {
+    gap: 25px;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+    line-height: 1.7;
+  }
+}
+
   </style>
 </head>
 
