@@ -1108,130 +1108,180 @@
     </aside>
   </div>
 
-  <script>
-    const PRODUCT_PRICE = 12.90;
-    const PRODUCT_NAME = "FUCK OFF.";
-    let cart = [];
 
-    try {
-      cart = JSON.parse(localStorage.getItem("vaelkr-cart")) || [];
-      if (!Array.isArray(cart)) cart = [];
-    } catch (error) {
-      cart = [];
-    }
+const PRODUCT_PRICE = 12.90;
+const PRODUCT_NAME = "FUCK OFF.";
 
-    function saveCart() {
-      localStorage.setItem("vaelkr-cart", JSON.stringify(cart));
-    }
+const CUSTOM_PRICE = 14.90;
+const CUSTOM_NAME = "YOUR TEXT.";
 
-    function formatPrice(price) {
-      return price.toFixed(2).replace(".", ",") + " €";
-    }
+let cart = [];
 
-    function addToCart() {
-      const size = document.getElementById("size").value;
+try {
+  cart = JSON.parse(localStorage.getItem("vaelkr-cart")) || [];
+  if (!Array.isArray(cart)) cart = [];
+} catch (error) {
+  cart = [];
+}
 
-      if (!size) {
-        alert("PLEASE SELECT A SIZE FIRST.");
-        return;
-      }
+function saveCart() {
+  localStorage.setItem("vaelkr-cart", JSON.stringify(cart));
+}
 
-      const existingItem = cart.find(item =>
-        item.name === PRODUCT_NAME && item.size === size
-      );
+function formatPrice(price) {
+  return Number(price).toFixed(2).replace(".", ",") + " €";
+}
 
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({
-          name: PRODUCT_NAME,
-          size: size,
-          price: PRODUCT_PRICE,
-          quantity: 1
-        });
-      }
+function addItem(name, size, price, customText = "") {
+  const existingItem = cart.find(item =>
+    item.name === name &&
+    item.size === size &&
+    (item.customText || "") === customText
+  );
 
-      saveCart();
-      updateCart();
-      openCart();
-    }
-
-    function updateCart() {
-      const itemsContainer = document.getElementById("cart-items");
-      const countElement = document.getElementById("cart-count");
-      const totalElement = document.getElementById("cart-total");
-
-      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-      const totalPrice = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity, 0
-      );
-
-      countElement.textContent = totalQuantity;
-      totalElement.textContent = formatPrice(totalPrice);
-
-      if (cart.length === 0) {
-        itemsContainer.innerHTML =
-          '<p class="empty-cart">YOUR BAG IS EMPTY.</p>';
-        return;
-      }
-
-      itemsContainer.innerHTML = cart.map((item, index) => `
-        <div class="cart-item">
-          <div>
-            <h3>${item.name}</h3>
-            <p>SIZE: ${item.size}</p>
-            <p>QUANTITY: ${item.quantity}</p>
-            <button class="remove-item" onclick="removeItem(${index})">
-              REMOVE
-            </button>
-          </div>
-          <div class="cart-item-price">
-            ${formatPrice(item.price * item.quantity)}
-          </div>
-        </div>
-      `).join("");
-    }
-
-    function removeItem(index) {
-      cart.splice(index, 1);
-      saveCart();
-      updateCart();
-    }
-
-    function openCart() {
-      document.getElementById("cart-overlay").classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeCart() {
-      document.getElementById("cart-overlay").classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
-    function overlayClick(event) {
-      if (event.target.id === "cart-overlay") {
-        closeCart();
-      }
-    }
-
-    function checkout() {
-      if (cart.length === 0) {
-        alert("YOUR BAG IS EMPTY.");
-        return;
-      }
-
-      alert(
-        "YOUR BAG IS READY! Online payment is not connected yet. " +
-        "We will set up the secure checkout in the next step."
-      );
-    }
-
-    updateCart();
-
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") closeCart();
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      name: name,
+      size: size,
+      price: price,
+      quantity: 1,
+      customText: customText
     });
-  </script>
+  }
+
+  saveCart();
+  updateCart();
+  openCart();
+}
+
+function addToCart() {
+  const size = document.getElementById("size").value;
+
+  if (!size) {
+    alert("PLEASE SELECT A SIZE FIRST.");
+    return;
+  }
+
+  addItem(PRODUCT_NAME, size, PRODUCT_PRICE);
+}
+
+function addCustomToCart() {
+  const text = document.getElementById("custom-text").value.trim();
+  const size = document.getElementById("custom-size").value;
+
+  if (!text) {
+    alert("PLEASE WRITE YOUR TEXT FIRST.");
+    return;
+  }
+
+  if (!size) {
+    alert("PLEASE SELECT A SIZE FIRST.");
+    return;
+  }
+
+  if (text.length > 30) {
+    alert("MAXIMUM 30 CHARACTERS.");
+    return;
+  }
+
+  addItem(CUSTOM_NAME, size, CUSTOM_PRICE, text);
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  })[character]);
+}
+
+function updateCart() {
+  const itemsContainer = document.getElementById("cart-items");
+  const countElement = document.getElementById("cart-count");
+  const totalElement = document.getElementById("cart-total");
+
+  const totalQuantity = cart.reduce(
+    (sum, item) => sum + item.quantity, 0
+  );
+
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity, 0
+  );
+
+  countElement.textContent = totalQuantity;
+  totalElement.textContent = formatPrice(totalPrice);
+
+  if (cart.length === 0) {
+    itemsContainer.innerHTML =
+      '<p class="empty-cart">YOUR BAG IS EMPTY.</p>';
+    return;
+  }
+
+  itemsContainer.innerHTML = cart.map((item, index) => `
+    <div class="cart-item">
+      <div>
+        <h3>${escapeHTML(item.name)}</h3>
+        ${item.customText ? `
+          <p>YOUR TEXT: ${escapeHTML(item.customText)}</p>
+        ` : ""}
+        <p>SIZE: ${escapeHTML(item.size)}</p>
+        <p>QUANTITY: ${item.quantity}</p>
+        <button class="remove-item" onclick="removeItem(${index})">
+          REMOVE
+        </button>
+      </div>
+
+      <div class="cart-item-price">
+        ${formatPrice(item.price * item.quantity)}
+      </div>
+    </div>
+  `).join("");
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  saveCart();
+  updateCart();
+}
+
+function openCart() {
+  document.getElementById("cart-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCart() {
+  document.getElementById("cart-overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function overlayClick(event) {
+  if (event.target.id === "cart-overlay") {
+    closeCart();
+  }
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    alert("YOUR BAG IS EMPTY.");
+    return;
+  }
+
+  alert(
+    "YOUR BAG IS READY! Online payment is not connected yet. " +
+    "We will set up the secure checkout in the next step."
+  );
+}
+
+updateCart();
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") closeCart();
+});
+
 
 </body>
 </html>
