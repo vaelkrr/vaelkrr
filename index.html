@@ -241,7 +241,7 @@
       margin-top: 10px;
     }
 
-    /* PRODUCTO */
+    /* PRODUCTOS */
 
     .product {
       display: grid;
@@ -568,7 +568,10 @@
     @media (max-width: 600px) {
       header { padding: 20px 5%; }
       nav { gap: 10px; }
-      nav a, .cart-trigger { font-size: 9px; letter-spacing: 1px; }
+      nav a, .cart-trigger {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
 
       main {
         min-height: 75vh;
@@ -613,13 +616,14 @@
 
   <header>
     <div class="logo">VÆLKR®</div>
-  <nav>
-  <a href="#shop">SHOP</a>
-  <a href="#about">ABOUT</a>
-  <button class="cart-trigger" onclick="openCart()">
-    CART (<span id="cart-count">0</span>)
-  </button>
-</nav>
+
+    <nav>
+      <a href="#shop">SHOP</a>
+      <a href="#about">ABOUT</a>
+      <button class="cart-trigger" onclick="openCart()">
+        CART (<span id="cart-count">0</span>)
+      </button>
+    </nav>
   </header>
 
   <main>
@@ -702,11 +706,11 @@
     </div>
   </section>
 
-
   <!-- BASIC / TEXT -->
 
   <section class="section">
     <div class="collection-block" id="basic">
+
       <div class="collection-heading">
         <h3>01 — BASIC / TEXT</h3>
         <span>12,90–14,90 €</span>
@@ -720,6 +724,7 @@
       <!-- STATEMENT -->
 
       <div class="collection-block">
+
         <div class="collection-heading">
           <h3>01 — STATEMENT</h3>
           <span>PRE-DESIGNED</span>
@@ -728,6 +733,7 @@
         <p>Frases y diseños creados por VÆLKR.</p>
 
         <div class="product">
+
           <div class="product-visual">
             <div class="shirt-mockup">
               <span>FUCK<br>OFF.</span>
@@ -747,6 +753,7 @@
             <label class="field-label" for="size">
               SELECT SIZE
             </label>
+
             <select class="size-select" id="size">
               <option value="">CHOOSE YOUR SIZE</option>
               <option value="XS">XS</option>
@@ -757,7 +764,7 @@
               <option value="XXL">XXL</option>
             </select>
 
-           <button class="add-button" type="button" onclick="window.addCustomToCart()">
+            <button class="add-button" type="button" onclick="addToCart()">
               ADD TO CART
             </button>
 
@@ -765,12 +772,14 @@
               VÆLKR® — WORN DIFFERENT.
             </p>
           </div>
+
         </div>
       </div>
 
       <!-- YOUR TEXT -->
 
       <div class="collection-block">
+
         <div class="collection-heading">
           <h3>02 — YOUR TEXT</h3>
           <span>CUSTOM DESIGN</span>
@@ -782,6 +791,7 @@
         </p>
 
         <div class="product">
+
           <div class="product-visual">
             <div class="shirt-mockup">
               <span>YOUR<br>TEXT.</span>
@@ -801,6 +811,7 @@
             <label class="field-label" for="custom-text">
               WRITE YOUR TEXT
             </label>
+
             <input
               class="size-select"
               id="custom-text"
@@ -813,6 +824,7 @@
             <label class="field-label" for="custom-size">
               SELECT SIZE
             </label>
+
             <select class="size-select" id="custom-size">
               <option value="">CHOOSE YOUR SIZE</option>
               <option value="XS">XS</option>
@@ -823,7 +835,7 @@
               <option value="XXL">XXL</option>
             </select>
 
-            <button class="add-button" onclick="addCustomToCart()">
+            <button class="add-button" type="button" onclick="addCustomToCart()">
               ADD TO CART
             </button>
 
@@ -832,6 +844,7 @@
               Custom orders will be confirmed before production.
             </p>
           </div>
+
         </div>
       </div>
     </div>
@@ -867,172 +880,7 @@
 
       <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
     </div>
-  </section>
 
-  <!-- BASIC / TEXT -->
-
-  <section class="section">
-    <div class="collection-block" id="basic">
-      <div class="collection-heading">
-        <h3>01 — BASIC / TEXT</h3>
-        <span>12,90–14,90 €</span>
-      </div>
-
-      <p>
-        Bold statements. Clean designs.
-        Text placed front or back. Nothing unnecessary.
-      </p>
-
-      <!-- STATEMENT -->
-
-      <div class="collection-block">
-        <div class="collection-heading">
-          <h3>01 — STATEMENT</h3>
-          <span>PRE-DESIGNED</span>
-        </div>
-
-        <p>Frases y diseños creados por VÆLKR.</p>
-
-        <div class="product">
-          <div class="product-visual">
-            <div class="shirt-mockup">
-              <span>FUCK<br>OFF.</span>
-            </div>
-          </div>
-
-          <div class="product-details">
-            <p class="product-category">BASIC / TEXT — STATEMENT 001</p>
-            <h3>FUCK OFF.</h3>
-            <p class="product-price">12,90 €</p>
-
-            <p class="product-description">
-              Black T-shirt. Pink statement lettering.
-              No unnecessary details. Made to stand out.
-            </p>
-
-            <label class="field-label" for="size">
-              SELECT SIZE
-            </label>
-            <select class="size-select" id="size">
-              <option value="">CHOOSE YOUR SIZE</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="XXL">XXL</option>
-            </select>
-
-            <button class="add-button" onclick="addToCart()">
-              ADD TO CART
-            </button>
-
-            <p class="product-note">
-              VÆLKR® — WORN DIFFERENT.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- YOUR TEXT -->
-
-      <div class="collection-block">
-        <div class="collection-heading">
-          <h3>02 — YOUR TEXT</h3>
-          <span>CUSTOM DESIGN</span>
-        </div>
-
-        <p>
-          Your words. Your statement.
-          Create your own VÆLKR design.
-        </p>
-
-        <div class="product">
-          <div class="product-visual">
-            <div class="shirt-mockup">
-              <span>YOUR<br>TEXT.</span>
-            </div>
-          </div>
-
-          <div class="product-details">
-            <p class="product-category">BASIC / TEXT — CUSTOM</p>
-            <h3>YOUR TEXT.</h3>
-            <p class="product-price">14,90 €</p>
-
-            <p class="product-description">
-              Your phrase, your choice.
-              One colour. Your own statement.
-            </p>
-
-            <label class="field-label" for="custom-text">
-              WRITE YOUR TEXT
-            </label>
-            <input
-              class="size-select"
-              id="custom-text"
-              type="text"
-              maxlength="30"
-              placeholder="YOUR PHRASE..."
-              autocomplete="off"
-            >
-
-            <label class="field-label" for="custom-size">
-              SELECT SIZE
-            </label>
-            <select class="size-select" id="custom-size">
-              <option value="">CHOOSE YOUR SIZE</option>
-              <option value="XS">XS</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="XXL">XXL</option>
-            </select>
-
-            <button class="add-button" onclick="addCustomToCart()">
-              ADD TO CART
-            </button>
-
-            <p class="product-note">
-              Maximum 30 characters. One colour.
-              Custom orders will be confirmed before production.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ESSENTIALS -->
-
-    <div class="collection-block" id="essentials">
-      <div class="collection-heading">
-        <h3>02 — ESSENTIALS</h3>
-        <span>FROM 17,90 €</span>
-      </div>
-
-      <p>
-        Original VÆLKR designs, reproduced in small quantities.
-        Made to be worn differently.
-      </p>
-
-      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
-    </div>
-
-    <!-- ONE OF ONE -->
-
-    <div class="collection-block" id="oneofone">
-      <div class="collection-heading">
-        <h3>03 — ONE OF ONE</h3>
-        <span>24,90–29,90 €</span>
-      </div>
-
-      <p>
-        Hand-painted pieces. Unique designs.
-        No two pieces have to be exactly alike.
-      </p>
-
-      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
-    </div>
   </section>
 
   <!-- ARCHIVE -->
@@ -1045,6 +893,7 @@
     </p>
 
     <div class="gallery">
+
       <figure>
         <img src="boceto.jpeg" alt="Proceso de creación de VÆLKR">
         <figcaption>
@@ -1060,6 +909,7 @@
           <span>ONE OF ONE</span>
         </figcaption>
       </figure>
+
     </div>
   </section>
 
@@ -1081,7 +931,9 @@
   <!-- CART -->
 
   <div class="cart-overlay" id="cart-overlay" onclick="overlayClick(event)">
+
     <aside class="cart-panel" aria-label="Shopping cart">
+
       <div class="cart-header">
         <h2>YOUR BAG</h2>
         <button class="close-cart" onclick="closeCart()" aria-label="Close cart">×</button>
@@ -1105,183 +957,189 @@
           Shipping costs and payment options will be shown when checkout is connected.
         </p>
       </div>
+
     </aside>
   </div>
 
+  <!-- JAVASCRIPT -->
 
-const PRODUCT_PRICE = 12.90;
-const PRODUCT_NAME = "FUCK OFF.";
+  <script>
+    const PRODUCT_PRICE = 12.90;
+    const PRODUCT_NAME = "FUCK OFF.";
 
-const CUSTOM_PRICE = 14.90;
-const CUSTOM_NAME = "YOUR TEXT.";
+    const CUSTOM_PRICE = 14.90;
+    const CUSTOM_NAME = "YOUR TEXT.";
 
-let cart = [];
+    let cart = [];
 
-try {
-  cart = JSON.parse(localStorage.getItem("vaelkr-cart")) || [];
-  if (!Array.isArray(cart)) cart = [];
-} catch (error) {
-  cart = [];
-}
+    try {
+      cart = JSON.parse(localStorage.getItem("vaelkr-cart")) || [];
+      if (!Array.isArray(cart)) cart = [];
+    } catch (error) {
+      cart = [];
+    }
 
-function saveCart() {
-  localStorage.setItem("vaelkr-cart", JSON.stringify(cart));
-}
+    function saveCart() {
+      localStorage.setItem("vaelkr-cart", JSON.stringify(cart));
+    }
 
-function formatPrice(price) {
-  return Number(price).toFixed(2).replace(".", ",") + " €";
-}
+    function formatPrice(price) {
+      return Number(price).toFixed(2).replace(".", ",") + " €";
+    }
 
-function addItem(name, size, price, customText = "") {
-  const existingItem = cart.find(item =>
-    item.name === name &&
-    item.size === size &&
-    (item.customText || "") === customText
-  );
+    function addItem(name, size, price, customText = "") {
 
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    cart.push({
-      name: name,
-      size: size,
-      price: price,
-      quantity: 1,
-      customText: customText
+      const existingItem = cart.find(item =>
+        item.name === name &&
+        item.size === size &&
+        (item.customText || "") === customText
+      );
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          name: name,
+          size: size,
+          price: price,
+          quantity: 1,
+          customText: customText
+        });
+      }
+
+      saveCart();
+      updateCart();
+      openCart();
+    }
+
+    // STATEMENT — FUCK OFF.
+
+    function addToCart() {
+      const size = document.getElementById("size").value;
+
+      if (!size) {
+        alert("PLEASE SELECT A SIZE FIRST.");
+        return;
+      }
+
+      addItem(PRODUCT_NAME, size, PRODUCT_PRICE);
+    }
+
+    // YOUR TEXT — CUSTOM
+
+    function addCustomToCart() {
+      const text = document.getElementById("custom-text").value.trim();
+      const size = document.getElementById("custom-size").value;
+
+      if (!text) {
+        alert("PLEASE WRITE YOUR TEXT FIRST.");
+        return;
+      }
+
+      if (!size) {
+        alert("PLEASE SELECT A SIZE FIRST.");
+        return;
+      }
+
+      addItem(CUSTOM_NAME, size, CUSTOM_PRICE, text);
+    }
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      })[character]);
+    }
+
+    function updateCart() {
+      const itemsContainer = document.getElementById("cart-items");
+      const countElement = document.getElementById("cart-count");
+      const totalElement = document.getElementById("cart-total");
+
+      const totalQuantity = cart.reduce(
+        (sum, item) => sum + item.quantity, 0
+      );
+
+      const totalPrice = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity, 0
+      );
+
+      countElement.textContent = totalQuantity;
+      totalElement.textContent = formatPrice(totalPrice);
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML =
+          '<p class="empty-cart">YOUR BAG IS EMPTY.</p>';
+        return;
+      }
+
+      itemsContainer.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <div>
+            <h3>${escapeHTML(item.name)}</h3>
+
+            ${item.customText ? `
+              <p>YOUR TEXT: ${escapeHTML(item.customText)}</p>
+            ` : ""}
+
+            <p>SIZE: ${escapeHTML(item.size)}</p>
+            <p>QUANTITY: ${item.quantity}</p>
+
+            <button class="remove-item" onclick="removeItem(${index})">
+              REMOVE
+            </button>
+          </div>
+
+          <div class="cart-item-price">
+            ${formatPrice(item.price * item.quantity)}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      saveCart();
+      updateCart();
+    }
+
+    function openCart() {
+      document.getElementById("cart-overlay").classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCart() {
+      document.getElementById("cart-overlay").classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function overlayClick(event) {
+      if (event.target.id === "cart-overlay") {
+        closeCart();
+      }
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("YOUR BAG IS EMPTY.");
+        return;
+      }
+
+      alert(
+        "YOUR BAG IS READY! Online payment is not connected yet. " +
+        "We will set up the secure checkout in the next step."
+      );
+    }
+
+    updateCart();
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeCart();
     });
-  }
-
-  saveCart();
-  updateCart();
-  openCart();
-}
-
-function addToCart() {
-  const size = document.getElementById("size").value;
-
-  if (!size) {
-    alert("PLEASE SELECT A SIZE FIRST.");
-    return;
-  }
-
-  addItem(PRODUCT_NAME, size, PRODUCT_PRICE);
-}
-
-window.addCustomToCart = function() {
-  const text = document.getElementById("custom-text").value.trim();
-  const size = document.getElementById("custom-size").value;
-
-  if (!text) {
-    alert("PLEASE WRITE YOUR TEXT FIRST.");
-    return;
-  }
-
-  if (!size) {
-    alert("PLEASE SELECT A SIZE FIRST.");
-    return;
-  }
-
-  if (text.length > 30) {
-    alert("MAXIMUM 30 CHARACTERS.");
-    return;
-  }
-
-  addItem(CUSTOM_NAME, size, CUSTOM_PRICE, text);
-}
-
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, character => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  })[character]);
-}
-
-function updateCart() {
-  const itemsContainer = document.getElementById("cart-items");
-  const countElement = document.getElementById("cart-count");
-  const totalElement = document.getElementById("cart-total");
-
-  const totalQuantity = cart.reduce(
-    (sum, item) => sum + item.quantity, 0
-  );
-
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity, 0
-  );
-
-  countElement.textContent = totalQuantity;
-  totalElement.textContent = formatPrice(totalPrice);
-
-  if (cart.length === 0) {
-    itemsContainer.innerHTML =
-      '<p class="empty-cart">YOUR BAG IS EMPTY.</p>';
-    return;
-  }
-
-  itemsContainer.innerHTML = cart.map((item, index) => `
-    <div class="cart-item">
-      <div>
-        <h3>${escapeHTML(item.name)}</h3>
-        ${item.customText ? `
-          <p>YOUR TEXT: ${escapeHTML(item.customText)}</p>
-        ` : ""}
-        <p>SIZE: ${escapeHTML(item.size)}</p>
-        <p>QUANTITY: ${item.quantity}</p>
-        <button class="remove-item" onclick="removeItem(${index})">
-          REMOVE
-        </button>
-      </div>
-
-      <div class="cart-item-price">
-        ${formatPrice(item.price * item.quantity)}
-      </div>
-    </div>
-  `).join("");
-}
-
-function removeItem(index) {
-  cart.splice(index, 1);
-  saveCart();
-  updateCart();
-}
-
-function openCart() {
-  document.getElementById("cart-overlay").classList.add("open");
-  document.body.style.overflow = "hidden";
-}
-
-function closeCart() {
-  document.getElementById("cart-overlay").classList.remove("open");
-  document.body.style.overflow = "";
-}
-
-function overlayClick(event) {
-  if (event.target.id === "cart-overlay") {
-    closeCart();
-  }
-}
-
-function checkout() {
-  if (cart.length === 0) {
-    alert("YOUR BAG IS EMPTY.");
-    return;
-  }
-
-  alert(
-    "YOUR BAG IS READY! Online payment is not connected yet. " +
-    "We will set up the secure checkout in the next step."
-  );
-}
-
-updateCart();
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") closeCart();
-});
-
+  </script>
 
 </body>
 </html>
