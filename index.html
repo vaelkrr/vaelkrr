@@ -126,7 +126,44 @@
         padding: 35px 5% 60px;
       }
     }
-  </style>
+  </sty
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .gallery figure {
+      min-width: 0;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border: 1px solid #343430;
+      filter: saturate(0.8);
+    }
+
+    .gallery figcaption {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 12px;
+      color: #aaa69c;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+le>
 </head>
 <body>
 
@@ -148,13 +185,32 @@
     </p>
   </main>
 
-  <section class="collection" id="collection">
-    <h2>01 / THE COLLECTION</h2>
-    <div class="placeholder">
-      YOUR NEXT FAVOURITE PIECE.<br>
-      COMING SOON.
-    </div>
-  </section>
+
+<section class="collection" id="collection">
+  <h2>01 / THE ARCHIVE</h2>
+  <p class="description">
+    EVERY PIECE HAS A STORY.
+  </p>
+
+  <div class="gallery">
+    <figure>
+      <img src="boceto.jpg" alt="Proceso de creación de la primera camiseta VÆLKR">
+      <figcaption>
+        <span>01 — THE PROCESS</span>
+        <span>HANDMADE</span>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="primer diseño.jpg" alt="Diseño original de la primera camiseta VÆLKR">
+      <figcaption>
+        <span>02 — THE FIRST PIECE</span>
+        <span>ONE OF ONE</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 
   <section class="collection" id="about">
     <h2>02 / ABOUT VÆLKR</h2>
