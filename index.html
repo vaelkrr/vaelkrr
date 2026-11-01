@@ -1193,6 +1193,84 @@ nav a:hover::after {
   }
 }
 
+/* VÆLKR — CAMPAIGN HERO */
+
+main {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 4%;
+  align-content: center;
+  min-height: 88vh;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.hero-top {
+  grid-column: 1 / -1;
+  margin-bottom: 75px;
+}
+
+main > .tag,
+main > h1,
+main > .hero-bottom {
+  grid-column: 1;
+}
+
+main > h1 {
+  font-size: clamp(58px, 8vw, 115px);
+}
+
+.hero-bottom {
+  margin-top: 35px;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+main::after {
+  content: "";
+  grid-column: 2;
+  grid-row: 2 / 5;
+  grid-column: 2;
+  grid-row: 2 / 5;
+  align-self: stretch;
+  min-height: 480px;
+  background:
+    linear-gradient(to top, #10100f55, transparent 35%),
+    url("campaign-001.jpeg") center 35% / cover no-repeat;
+  border: 1px solid #343430;
+  animation: vaelkr-enter 1.1s .2s ease-out both;
+}
+
+@media (max-width: 700px) {
+  main {
+    display: flex;
+    min-height: auto;
+    padding-top: 35px;
+    gap: 0;
+  }
+
+  .hero-top {
+    margin-bottom: 55px;
+  }
+
+  main > h1 {
+    font-size: clamp(55px, 13vw, 90px);
+  }
+
+  main::after {
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    margin-top: 40px;
+    background-position: center 30%;
+  }
+
+  .hero-bottom {
+    margin-top: 30px;
+  }
+}
+
   </style>
 </head>
 
