@@ -1336,6 +1336,53 @@ main::after {
   }
 }
 
+/* VÆLKR — INFINITE BRAND MARQUEE */
+
+.brand-marquee {
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px solid #343430;
+  border-bottom: 1px solid #343430;
+  padding: 22px 0;
+  background: #141412;
+}
+
+.brand-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: vaelkr-marquee 24s linear infinite;
+}
+
+.brand-marquee-track span {
+  flex-shrink: 0;
+  padding-right: 32px;
+  color: #f1eee7;
+  font-size: clamp(20px, 3vw, 36px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.brand-marquee-track .marquee-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #f1eee7;
+}
+
+@keyframes vaelkr-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.brand-marquee:hover .brand-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-marquee-track {
+    animation: none;
+  }
+}
+
   </style>
 </head>
 
@@ -1382,6 +1429,17 @@ main::after {
 
     <div class="hero-mark" aria-hidden="true">Æ</div>
   </main>
+
+<div class="brand-marquee" aria-label="VÆLKR — Worn Different">
+  <div class="brand-marquee-track" aria-hidden="true">
+    <span>VÆLKR®</span>
+    <span class="marquee-outline">WORN DIFFERENT.</span>
+    <span>NOT MADE TO FIT IN.</span>
+    <span>VÆLKR®</span>
+    <span class="marquee-outline">WORN DIFFERENT.</span>
+    <span>NOT MADE TO FIT IN.</span>
+  </div>
+</div>
 
   <!-- SHOP -->
 
