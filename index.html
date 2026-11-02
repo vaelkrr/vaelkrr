@@ -53,18 +53,38 @@
       font-family: inherit;
     }
 
-    nav a:hover {
-      color: #aaa69c;
-    }
+    nav a { transition: color .25s ease, letter-spacing .25s ease; }
+    nav a:hover { color: #ed8cbd; letter-spacing: 2.7px; }
 
     main {
       position: relative;
-      min-height: 78vh;
+      isolation: isolate;
+      min-height: 82vh;
       overflow: hidden;
       padding: 45px 7% 65px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background: radial-gradient(ellipse at 78% 48%, #282722 0%, #10100f 56%);
+    }
+
+    .hero-photo {
+      position: absolute;
+      z-index: -1;
+      top: 13%; right: 7%;
+      width: min(38%, 510px);
+      height: 70%;
+      object-fit: cover;
+      object-position: center;
+      opacity: .72;
+      filter: grayscale(35%) contrast(1.08);
+      mask-image: linear-gradient(to left, #000 58%, transparent 100%);
+      transition: opacity .45s ease, transform .7s ease, filter .45s ease;
+    }
+    main:hover .hero-photo { opacity: .88; transform: scale(1.025); filter: grayscale(10%) contrast(1.12); }
+    main::after {
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(90deg, #10100f 0%, rgba(16,16,15,.93) 38%, rgba(16,16,15,.12) 100%);
     }
 
     .hero-top {
@@ -87,11 +107,18 @@
     h1 {
       position: relative;
       z-index: 1;
+      width: fit-content;
       font-size: clamp(58px, 13.5vw, 165px);
       line-height: 0.88;
       letter-spacing: -0.095em;
       font-weight: 900;
+      transition: transform .35s ease, text-shadow .35s ease;
     }
+    h1:hover { transform: translateX(7px); text-shadow: 0 0 26px rgba(241,238,231,.12); }
+    .tag, .slogan, .description { transition: color .3s ease, letter-spacing .3s ease; }
+    main:hover .tag { color: #f1eee7; letter-spacing: 5px; }
+    .hero-button { transition: background .25s, color .25s, transform .25s, letter-spacing .25s; }
+    .hero-button:hover { background: #aaa69c; transform: translateY(-3px); letter-spacing: 2px; }
 
     h1 span { display: block; }
 
@@ -227,7 +254,11 @@
       font-size: 13px;
       letter-spacing: 2px;
       margin-bottom: 9px;
+      transition: letter-spacing .3s ease, color .3s ease;
     }
+    .shop-card:hover .shop-info h3 { letter-spacing: 3px; color: #fff; }
+    .shop-card:hover .shop-price { color: #ed8cbd; }
+    .shop-price { transition: color .3s ease; }
 
     .shop-info p {
       color: #aaa69c;
@@ -554,6 +585,8 @@
       }
 
       .hero-mark { top: 28%; right: 0; }
+      .hero-photo { width: 72%; height: 54%; top: 22%; right: 0; opacity: .42; }
+      main::after { background: linear-gradient(90deg, #10100f 0%, rgba(16,16,15,.82) 55%, rgba(16,16,15,.25) 100%); }
 
       .section { padding: 45px 5% 60px; }
 
@@ -588,6 +621,7 @@
   </header>
 
   <main>
+    <img class="hero-photo" src="campaign-001.jpeg" alt="VÆLKR campaign — original brand image">
     <div class="hero-top">
       <span>INDEPENDENT LABEL — EST. 2026</span>
       <span>001 / ORIGINAL PIECES</span>
