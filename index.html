@@ -193,7 +193,7 @@
     }
 
     /* SHOP */
-<img src="camiseta-vaelkr.jpeg" alt="Camiseta VÆLKR">
+
     .shop-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -385,6 +385,18 @@
     .add-button:hover {
       background: transparent;
       color: #f1eee7;
+    }
+
+    /* Botones de cada producto: tamaño uniforme sin ocupar todo el ancho */
+    .product-details .add-button {
+      width: auto;
+      min-width: 190px;
+      max-width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      white-space: normal;
     }
 
     .product-note {
