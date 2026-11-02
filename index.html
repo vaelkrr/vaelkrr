@@ -54,7 +54,7 @@
     }
 
     nav a { transition: color .25s ease, letter-spacing .25s ease; }
-    nav a:hover { color: #ed8cbd; letter-spacing: 2.7px; }
+    nav a:hover { color: #C9BBA5; letter-spacing: 2.7px; }
 
     main {
       position: relative;
@@ -65,7 +65,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: radial-gradient(ellipse at 78% 48%, #282722 0%, #10100f 56%);
+      background: radial-gradient(ellipse at 78% 48%, #302c25 0%, #10100f 58%);
     }
 
     .hero-photo {
@@ -81,9 +81,19 @@
       mask-image: linear-gradient(to left, #000 58%, transparent 100%);
       transition: opacity .45s ease, transform .7s ease, filter .45s ease;
     }
-    main:hover .hero-photo { opacity: .88; transform: scale(1.025); filter: grayscale(10%) contrast(1.12); }
+
+    main:hover .hero-photo {
+      opacity: .88;
+      transform: scale(1.025);
+      filter: grayscale(10%) contrast(1.12);
+    }
+
     main::after {
-      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
       background: linear-gradient(90deg, #10100f 0%, rgba(16,16,15,.93) 38%, rgba(16,16,15,.12) 100%);
     }
 
@@ -91,14 +101,14 @@
       display: flex;
       justify-content: space-between;
       gap: 15px;
-      color: #77746d;
+      color: #C9BBA5;
       font-size: 9px;
       letter-spacing: 2px;
       margin-bottom: 100px;
     }
 
     .tag {
-      color: #b9b4a9;
+      color: #C9BBA5;
       font-size: 11px;
       letter-spacing: 4px;
       margin-bottom: 24px;
@@ -114,17 +124,36 @@
       font-weight: 900;
       transition: transform .35s ease, text-shadow .35s ease;
     }
-    h1:hover { transform: translateX(7px); text-shadow: 0 0 26px rgba(241,238,231,.12); }
-    .tag, .slogan, .description { transition: color .3s ease, letter-spacing .3s ease; }
-    main:hover .tag { color: #f1eee7; letter-spacing: 5px; }
-    .hero-button { transition: background .25s, color .25s, transform .25s, letter-spacing .25s; }
-    .hero-button:hover { background: #aaa69c; transform: translateY(-3px); letter-spacing: 2px; }
+
+    h1:hover {
+      transform: translateX(7px);
+      text-shadow: 0 0 26px rgba(241,238,231,.12);
+    }
+
+    .tag, .slogan, .description {
+      transition: color .3s ease, letter-spacing .3s ease;
+    }
+
+    main:hover .tag {
+      color: #F1EEE7;
+      letter-spacing: 5px;
+    }
+
+    .hero-button {
+      transition: background .25s, color .25s, transform .25s, letter-spacing .25s;
+    }
+
+    .hero-button:hover {
+      background: #F1EEE7;
+      transform: translateY(-3px);
+      letter-spacing: 2px;
+    }
 
     h1 span { display: block; }
 
     h1 .outline {
       color: transparent;
-      -webkit-text-stroke: 1px #f1eee7;
+      -webkit-text-stroke: 1px #C9BBA5;
     }
 
     .hero-bottom {
@@ -151,7 +180,7 @@
 
     .hero-button {
       color: #10100f;
-      background: #f1eee7;
+      background: #C9BBA5;
       text-decoration: none;
       padding: 17px 20px;
       font-size: 10px;
@@ -160,7 +189,7 @@
       transition: background 0.2s;
     }
 
-    .hero-button:hover { background: #aaa69c; }
+    .hero-button:hover { background: #F1EEE7; }
 
     .hero-mark {
       position: absolute;
@@ -236,7 +265,10 @@
       transition: transform .3s ease, text-shadow .3s ease;
     }
 
-    .shop-card:hover .shirt-text { transform: rotate(-2deg) scale(1.06); text-shadow: 0 0 24px rgba(241,238,231,.28); }
+    .shop-card:hover .shirt-text {
+      transform: rotate(-2deg) scale(1.06);
+      text-shadow: 0 0 24px rgba(241,238,231,.28);
+    }
 
     .shirt-text.small {
       font-size: 23px;
@@ -256,6 +288,7 @@
       margin-bottom: 9px;
       transition: letter-spacing .3s ease, color .3s ease;
     }
+
     .shop-card:hover .shop-info h3 { letter-spacing: 3px; color: #fff; }
     .shop-card:hover .shop-price { color: #ed8cbd; }
     .shop-price { transition: color .3s ease; }
@@ -410,7 +443,6 @@
       color: #f1eee7;
     }
 
-    /* Botones de cada producto: tamaño uniforme sin ocupar todo el ancho */
     .product-details .add-button {
       width: auto;
       min-width: 190px;
@@ -451,10 +483,12 @@
     .form-field { display: flex; flex-direction: column; gap: 9px; }
     [hidden] { display: none !important; }
     .form-field.full { grid-column: 1 / -1; }
+
     .form-field label {
       font-size: 10px;
       letter-spacing: 2px;
     }
+
     .form-field input, .form-field select, .form-field textarea {
       width: 100%;
       padding: 14px;
@@ -465,14 +499,39 @@
       font-size: 12px;
       border-radius: 0;
     }
+
     .form-field textarea { min-height: 95px; resize: vertical; }
     .request-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px; }
     .request-actions .add-button { flex: 1; min-width: 220px; }
     .form-help { color: #77746d; font-size: 11px; line-height: 1.7; }
-    .request-result { display: none; margin-top: 25px; padding: 20px; border: 1px solid #494943; }
+
+    .request-result {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border: 1px solid #494943;
+    }
+
     .request-result.show { display: block; }
-    .request-result p { color: #aaa69c; font-size: 12px; line-height: 1.7; margin-bottom: 15px; }
-    .request-result textarea { width: 100%; min-height: 140px; padding: 12px; background: #191917; color: #f1eee7; border: 1px solid #494943; font: inherit; font-size: 12px; margin-bottom: 12px; }
+
+    .request-result p {
+      color: #aaa69c;
+      font-size: 12px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .request-result textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 12px;
+      background: #191917;
+      color: #f1eee7;
+      border: 1px solid #494943;
+      font: inherit;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
 
     /* COLECCIONES */
 
@@ -598,6 +657,7 @@
     @media (max-width: 600px) {
       header { padding: 20px 5%; }
       nav { gap: 10px; }
+
       nav a {
         font-size: 9px;
         letter-spacing: 1px;
@@ -621,10 +681,12 @@
 
       .hero-mark { top: 28%; right: 0; }
       .hero-photo { width: 72%; height: 54%; top: 22%; right: 0; opacity: .42; }
-      main::after { background: linear-gradient(90deg, #10100f 0%, rgba(16,16,15,.82) 55%, rgba(16,16,15,.25) 100%); }
+
+      main::after {
+        background: linear-gradient(90deg, #10100f 0%, rgba(16,16,15,.82) 55%, rgba(16,16,15,.25) 100%);
+      }
 
       .section { padding: 45px 5% 60px; }
-
       .shop-grid { grid-template-columns: 1fr; }
       .shop-image { height: 360px; }
 
@@ -634,10 +696,7 @@
       }
 
       .product-visual { min-height: 400px; }
-
       .gallery { grid-template-columns: 1fr; }
-
-
       footer { padding: 25px 5%; }
     }
   </style>
@@ -657,6 +716,7 @@
 
   <main>
     <img class="hero-photo" src="campaign-001.jpeg" alt="VÆLKR campaign — original brand image">
+
     <div class="hero-top">
       <span>INDEPENDENT LABEL — EST. 2026</span>
       <span>001 / ORIGINAL PIECES</span>
@@ -740,7 +800,6 @@
     </div>
   </section>
 
- 
   <!-- BASIC / TEXT -->
 
   <section class="section">
@@ -772,17 +831,16 @@
           <h3>FUCK OFF.</h3>
           <p class="product-price">12,90 €</p>
 
-       <p class="product-description">
-  A bold statement, designed by VÆLKR and painted by hand.
-  Choose your preferred T-shirt and lettering colours.
-</p>
+          <p class="product-description">
+            A bold statement, designed by VÆLKR and painted by hand.
+            Choose your preferred T-shirt and lettering colours.
           </p>
 
           <div class="product-specs">
-  <span>Custom tee colour</span>
-  <span>Custom lettering colour</span>
-  <span>Hand-painted</span>
-</div>
+            <span>Custom tee colour</span>
+            <span>Custom lettering colour</span>
+            <span>Hand-painted</span>
+          </div>
 
           <label class="field-label" for="size">
             SELECT SIZE
@@ -816,32 +874,62 @@
     </div>
 
     <!-- CUSTOM TEXT -->
+
     <div class="collection-block" id="customtext">
       <div class="collection-heading">
         <h3>02 — CUSTOM TEXT</h3>
         <span>14,90–17,90 €</span>
       </div>
+
       <p>Your own phrase, painted on the front or back. Final price depends on size and complexity.</p>
+
       <div class="product">
-        <div class="product-visual"><div class="shirt-mockup"><span>YOUR<br>WORDS.</span></div></div>
+        <div class="product-visual">
+          <div class="shirt-mockup"><span>YOUR<br>WORDS.</span></div>
+        </div>
+
         <div class="product-details">
           <p class="product-category">VÆLKR — CUSTOM TEXT</p>
           <h3>YOUR TEXT.</h3>
           <p class="product-price">14,90–17,90 €</p>
-          <p class="product-description">Your words, turned into a VÆLKR piece. Choose the phrase, placement and size; the final price depends on the lettering and work involved.</p>
-          <div class="product-specs"><span>Up to 30 characters</span><span>Front or back</span><span>One colour</span></div>
+
+          <p class="product-description">
+            Your words, turned into a VÆLKR piece. Choose the phrase, placement and size; the final price depends on the lettering and work involved.
+          </p>
+
+          <div class="product-specs">
+            <span>Up to 30 characters</span>
+            <span>Front or back</span>
+            <span>One colour</span>
+          </div>
+
           <label class="field-label" for="custom-text">WRITE YOUR TEXT</label>
           <input class="size-select" id="custom-text" type="text" maxlength="30" placeholder="YOUR PHRASE..." autocomplete="off">
+
           <label class="field-label" for="custom-placement">PLACEMENT</label>
           <select class="size-select" id="custom-placement">
-  <option value="Front">FRONT</option>
-  <option value="Back">BACK</option>
-  <option value="Both">BOTH (FRONT + BACK)</option>
-</select>
+            <option value="Front">FRONT</option>
+            <option value="Back">BACK</option>
+            <option value="Both">BOTH (FRONT + BACK)</option>
+          </select>
+
           <label class="field-label" for="custom-size">SELECT SIZE</label>
-          <select class="size-select" id="custom-size"><option value="">CHOOSE YOUR SIZE</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
-          <p class="stock-note" id="stock-custom-size">Made to order. Availability will be confirmed before accepting the request.</p>
+          <select class="size-select" id="custom-size">
+            <option value="">CHOOSE YOUR SIZE</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+
+          <p class="stock-note" id="stock-custom-size">
+            Made to order. Availability will be confirmed before accepting the request.
+          </p>
+
           <button class="add-button" type="button" onclick="prepareCustomRequest()">REQUEST ORDER</button>
+
           <p class="product-note">Maximum 30 characters. Final price confirmed before production.</p>
         </div>
       </div>
@@ -854,19 +942,47 @@
         <h3>03 — VÆLKR ESSENTIALS</h3>
         <span>11,90 €</span>
       </div>
+
       <p>The signature VÆLKR® name, painted small on the front corner.</p>
+
       <div class="product">
-        <div class="product-visual"><img src="vaelkr.png" alt="Camiseta VÆLKR Essentials con el logo en una esquina" style="width:100%;height:100%;object-fit:contain;padding:18px;"></div>
+        <div class="product-visual">
+          <img src="vaelkr.png" alt="Camiseta VÆLKR Essentials con el logo en una esquina" style="width:100%;height:100%;object-fit:contain;padding:18px;">
+        </div>
+
         <div class="product-details">
           <p class="product-category">VÆLKR ESSENTIALS — LOGO 001</p>
           <h3>VÆLKR®</h3>
           <p class="product-price">11,90 €</p>
-          <p class="product-description">The VÆLKR signature, kept deliberately minimal. A small logo on the front for an everyday piece.</p>
-          <div class="product-specs"><span>Minimal logo</span><span>Front placement</span><span>Everyday</span></div>
+
+          <p class="product-description">
+            The VÆLKR signature, kept deliberately minimal. A small logo on the front for an everyday piece.
+          </p>
+
+          <div class="product-specs">
+            <span>Minimal logo</span>
+            <span>Front placement</span>
+            <span>Everyday</span>
+          </div>
+
           <label class="field-label" for="essentials-size">SELECT SIZE</label>
-          <select class="size-select" id="essentials-size"><option value="">CHOOSE YOUR SIZE</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
-          <p class="stock-note">Made to order. Availability will be confirmed before accepting the request.</p>
-          <button class="add-button" type="button" onclick="prepareRequest('VÆLKR ESSENTIALS — LOGO 001', 11.90, 'essentials-size')">REQUEST ORDER</button>
+          <select class="size-select" id="essentials-size">
+            <option value="">CHOOSE YOUR SIZE</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+
+          <p class="stock-note">
+            Made to order. Availability will be confirmed before accepting the request.
+          </p>
+
+          <button class="add-button" type="button" onclick="prepareRequest('VÆLKR ESSENTIALS — LOGO 001', 11.90, 'essentials-size')">
+            REQUEST ORDER
+          </button>
         </div>
       </div>
     </div>
@@ -883,8 +999,17 @@
         Original hand-painted designs, developed as individual pieces.
         Each release is made in a limited quantity or as a one-off.
       </p>
-      <div class="product-specs"><span>Original artwork</span><span>Hand-painted</span><span>Limited / one-off</span></div>
-      <p class="product-availability">Starting price shown as a guide. The final price depends on the design and materials, and is confirmed before production.</p>
+
+      <div class="product-specs">
+        <span>Original artwork</span>
+        <span>Hand-painted</span>
+        <span>Limited / one-off</span>
+      </div>
+
+      <p class="product-availability">
+        Starting price shown as a guide. The final price depends on the design and materials, and is confirmed before production.
+      </p>
+
       <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
     </div>
 
@@ -894,17 +1019,23 @@
 
   <section class="section request-section" id="pedido">
     <h2>05 / REQUEST YOUR PIECE</h2>
-    <p class="section-intro">Choose your piece and size. Sizes XS–XXL are available to request; availability, final details and delivery costs are confirmed before anything is agreed. No payment is taken on this website.</p>
+
+    <p class="section-intro">
+      Choose your piece and size. Sizes XS–XXL are available to request; availability, final details and delivery costs are confirmed before anything is agreed. No payment is taken on this website.
+    </p>
 
     <form class="request-form" id="request-form">
+
       <div class="form-field">
         <label for="request-name">NAME</label>
         <input id="request-name" name="name" autocomplete="name" required placeholder="Your name">
       </div>
+
       <div class="form-field">
         <label for="request-contact">YOUR CONTACT (SO WE CAN REPLY)</label>
         <input id="request-contact" name="contact" required placeholder="Your Instagram @ or email">
       </div>
+
       <div class="form-field">
         <label for="request-product">PIECE</label>
         <select id="request-product" name="product" required>
@@ -915,6 +1046,7 @@
           <option value="ONE OF ONE — custom hand-painted">ONE OF ONE — from 24,90 €</option>
         </select>
       </div>
+
       <div class="form-field">
         <label for="request-size">SIZE</label>
         <select id="request-size" name="size" required>
@@ -922,30 +1054,54 @@
           <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
         </select>
       </div>
+
       <div class="form-field full" id="request-custom-field" hidden>
         <label for="request-text">YOUR TEXT (MAX. 30 CHARACTERS)</label>
         <input id="request-text" maxlength="30" placeholder="Your phrase">
+
         <label for="request-placement">PLACEMENT</label>
-        <select id="request-placement"><option value="Front">Front</option><option value="Back">Back</option></select>
+        <select id="request-placement">
+          <option value="Front">Front</option>
+          <option value="Back">Back</option>
+          <option value="Both">Both (front + back)</option>
+        </select>
       </div>
+
       <div class="form-field full">
         <label for="request-notes">EXTRA DETAILS (OPTIONAL)</label>
         <textarea id="request-notes" placeholder="Colour, placement, questions or anything else..."></textarea>
       </div>
+
       <div class="request-actions">
         <button class="add-button" type="submit">PREPARE REQUEST</button>
       </div>
-      <p class="form-help form-field full">Fill in your contact details so VÆLKR can reply. Your request is prepared on this device; it is only sent when you choose a contact option below.</p>
+
+      <p class="form-help form-field full">
+        Fill in your contact details so VÆLKR can reply. Your request is prepared on this device; it is only sent when you choose a contact option below.
+      </p>
     </form>
 
     <div class="request-result" id="request-result" aria-live="polite">
-      <p>Your request is ready. Instagram is the preferred way to contact VÆLKR. You can also send the request by email. Nothing is sent until you choose an option.</p>
+      <p>
+        Your request is ready. Instagram is the preferred way to contact VÆLKR. You can also send the request by email. Nothing is sent until you choose an option.
+      </p>
+
       <textarea id="request-message" readonly aria-label="Prepared order request"></textarea>
+
       <div class="request-actions">
-        <a class="hero-button" id="instagram-link" href="https://www.instagram.com/vaelkrr_/" target="_blank" rel="noopener">CONTACT VIA INSTAGRAM ↗</a>
-        <button class="add-button" type="button" onclick="copyRequest()">COPY REQUEST FOR DM</button>
-        <a class="hero-button" id="email-link" href="mailto:vaelkrr@gmail.com">EMAIL INSTEAD ↗</a>
+        <a class="hero-button" id="instagram-link" href="https://www.instagram.com/vaelkrr_/" target="_blank" rel="noopener">
+          CONTACT VIA INSTAGRAM ↗
+        </a>
+
+        <button class="add-button" type="button" onclick="copyRequest()">
+          COPY REQUEST FOR DM
+        </button>
+
+        <a class="hero-button" id="email-link" href="mailto:vaelkrr@gmail.com">
+          EMAIL INSTEAD ↗
+        </a>
       </div>
+
       <p class="form-help" id="copy-status" role="status"></p>
     </div>
   </section>
@@ -982,36 +1138,35 @@
 
   <!-- ABOUT -->
 
+  <section class="section" id="about">
+    <h2>03 / ABOUT VÆLKR</h2>
 
-<section class="section" id="about">
-  <h2>03 / ABOUT VÆLKR</h2>
+    <h3>CÓMO NACIÓ VÆLKR.</h3>
 
-  <h3>CÓMO NACIÓ VÆLKR.</h3>
+    <div class="about-text">
+      <p>Todo empezó con un proyecto de Filosofía.</p>
 
-  <div class="about-text">
-    <p>Todo empezó con un proyecto de Filosofía.</p>
+      <p>Para aquel trabajo decidí pintar una camiseta. Lo que empezó siendo simplemente una tarea del instituto acabó convirtiéndose en algo más cuando a mi profesora le encantó el resultado y me animó a seguir desarrollando ese talento.</p>
 
-    <p>Para aquel trabajo decidí pintar una camiseta. Lo que empezó siendo simplemente una tarea del instituto acabó convirtiéndose en algo más cuando a mi profesora le encantó el resultado y me animó a seguir desarrollando ese talento.</p>
+      <p>Pero lo cierto es que pintar siempre había formado parte de mí. Me ha gustado el arte desde pequeña, aunque nunca había pensado demasiado en convertirlo en algo propio.</p>
 
-    <p>Pero lo cierto es que pintar siempre había formado parte de mí. Me ha gustado el arte desde pequeña, aunque nunca había pensado demasiado en convertirlo en algo propio.</p>
+      <p>Tiempo después, surgió la idea de viajar y necesitaba conseguir algo de dinero extra. En lugar de buscar cualquier forma de hacerlo, decidí apostar por algo que realmente me gustaba: compartir mi arte.</p>
 
-    <p>Tiempo después, surgió la idea de viajar y necesitaba conseguir algo de dinero extra. En lugar de buscar cualquier forma de hacerlo, decidí apostar por algo que realmente me gustaba: compartir mi arte.</p>
+      <p>Quería que otras personas pudieran llevar algo creado por mí, que mis diseños llegaran más allá de mis propias manos y, al mismo tiempo, poder financiar mis propios proyectos.</p>
 
-    <p>Quería que otras personas pudieran llevar algo creado por mí, que mis diseños llegaran más allá de mis propias manos y, al mismo tiempo, poder financiar mis propios proyectos.</p>
+      <p>Así nació VÆLKR.</p>
 
-    <p>Así nació VÆLKR.</p>
+      <p>Una marca que empezó con una camiseta, pero con la intención de convertir ideas y creatividad en prendas que tengan algo que contar.</p>
+    </div>
 
-    <p>Una marca que empezó con una camiseta, pero con la intención de convertir ideas y creatividad en prendas que tengan algo que contar.</p>
-  </div>
-
-  <p class="product-note">
-    NOT JUST CLOTHING. A PIECE OF ART YOU CAN WEAR.
-  </p>
-</section>
-
+    <p class="product-note">
+      NOT JUST CLOTHING. A PIECE OF ART YOU CAN WEAR.
+    </p>
+  </section>
 
   <footer>
     <span>VÆLKR® — WORN DIFFERENT.</span>
+
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="#shop">SHOP</a>
       <a href="#about">ABOUT</a>
@@ -1026,6 +1181,7 @@
     /* STOCK MANUAL: cambia estas cantidades cuando actualices el stock.
        Un 0 significa "bajo pedido / consultar disponibilidad", no compra inmediata.
        Se muestra como orientación; la disponibilidad final siempre se confirma por Instagram. */
+
     const STOCK = {
       "FUCK OFF. — STATEMENT 001": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
       "YOUR TEXT. — CUSTOM": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
@@ -1036,17 +1192,21 @@
     // PERSONALIZA ESTOS DATOS ANTES DE PUBLICAR LA WEB.
     const INSTAGRAM_URL = "https://www.instagram.com/vaelkrr_/";
     const CONTACT_EMAIL = "vaelkrr@gmail.com";
+
     document.getElementById("instagram-link").href = INSTAGRAM_URL;
     document.getElementById("email-link").href = "mailto:" + CONTACT_EMAIL;
 
     function prepareRequest(name, price, sizeSelectId) {
       const size = document.getElementById(sizeSelectId).value;
+
       if (!size) {
         alert("Please select a size first.");
         return;
       }
+
       document.getElementById("request-product").value = name === "FUCK OFF."
         ? "FUCK OFF. — STATEMENT 001" : name;
+
       document.getElementById("request-size").value = size;
       document.getElementById("request-custom-field").hidden = name !== "YOUR TEXT.";
       document.getElementById("request-text").value = "";
@@ -1056,8 +1216,17 @@
     function prepareCustomRequest() {
       const phrase = document.getElementById("custom-text").value.trim();
       const size = document.getElementById("custom-size").value;
-      if (!phrase) { alert("Please write your text first."); return; }
-      if (!size) { alert("Please select a size first."); return; }
+
+      if (!phrase) {
+        alert("Please write your text first.");
+        return;
+      }
+
+      if (!size) {
+        alert("Please select a size first.");
+        return;
+      }
+
       document.getElementById("request-product").value = "YOUR TEXT. — CUSTOM";
       document.getElementById("request-size").value = size;
       document.getElementById("request-custom-field").hidden = false;
@@ -1072,19 +1241,25 @@
 
     document.getElementById("request-form").addEventListener("submit", function (event) {
       event.preventDefault();
+
       const name = document.getElementById("request-name").value.trim();
       const contact = document.getElementById("request-contact").value.trim();
       const product = document.getElementById("request-product").value;
       const size = document.getElementById("request-size").value;
       const phrase = document.getElementById("request-text").value.trim();
       const notes = document.getElementById("request-notes").value.trim();
+
       if (product === "YOUR TEXT. — CUSTOM" && !phrase) {
-        alert("Please add your custom phrase."); return;
+        alert("Please add your custom phrase.");
+        return;
       }
+
       const quantity = STOCK[product]?.[size] ?? 0;
+
       const stockLine = quantity > 0
         ? `Stock noted in the site code for this size: ${quantity}. Please confirm.`
         : "Made to order / availability to be confirmed before acceptance.";
+
       const message = [
         "Hi VÆLKR! I'd like to request a piece:",
         `Name: ${name}`,
@@ -1097,10 +1272,13 @@
         notes ? `Extra details: ${notes}` : "",
         "Please confirm availability, final price and delivery costs before confirming the order."
       ].filter(Boolean).join("\n");
+
       document.getElementById("request-message").value = message;
+
       document.getElementById("email-link").href = "mailto:" + CONTACT_EMAIL +
         "?subject=" + encodeURIComponent("VÆLKR order request — " + product) +
         "&body=" + encodeURIComponent(message);
+
       document.getElementById("request-result").classList.add("show");
       document.getElementById("request-result").scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
@@ -1108,12 +1286,14 @@
     async function copyRequest() {
       const message = document.getElementById("request-message").value;
       const status = document.getElementById("copy-status");
+
       try {
         await navigator.clipboard.writeText(message);
         status.textContent = "Copied. Open Instagram and paste it into your message.";
       } catch (error) {
         const box = document.getElementById("request-message");
-        box.focus(); box.select();
+        box.focus();
+        box.select();
         status.textContent = "Automatic copy is unavailable here. The message is selected; copy it manually.";
       }
     }
