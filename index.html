@@ -169,7 +169,7 @@
 
     .shop-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
       margin-top: 35px;
     }
@@ -179,7 +179,12 @@
       color: #f1eee7;
       text-decoration: none;
       min-width: 0;
+      transition: transform 0.25s ease, color 0.25s ease;
     }
+
+    .shop-card:hover { transform: translateY(-5px); color: #ffffff; }
+    .shop-card:hover .shop-info h3 { text-shadow: 0 0 12px rgba(241,238,231,.35); }
+    .shop-card:hover .shop-price { text-shadow: 0 0 10px rgba(241,238,231,.25); }
 
     .shop-image {
       height: 340px;
@@ -200,7 +205,11 @@
       letter-spacing: -2px;
       text-align: center;
       transform: rotate(-5deg);
+      text-shadow: 3px 3px 0 rgba(241,238,231,.10), 0 0 18px rgba(241,238,231,.12);
+      transition: transform .3s ease, text-shadow .3s ease;
     }
+
+    .shop-card:hover .shirt-text { transform: rotate(-2deg) scale(1.06); text-shadow: 0 0 24px rgba(241,238,231,.28); }
 
     .shirt-text.small {
       font-size: 23px;
@@ -478,6 +487,39 @@
       color: #77746d;
       font-size: 10px;
       letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: #f1eee7;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 2px;
+      transition: color .2s ease, text-shadow .2s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(241,238,231,.35);
+    }
+
+    .logo, h1, h2, .tag {
+      transition: text-shadow .25s ease, transform .25s ease;
+    }
+
+    h1:hover, h2:hover, .tag:hover {
+      text-shadow: 0 0 18px rgba(241,238,231,.22);
     }
 
     @media (max-width: 800px) {
@@ -533,7 +575,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <header>
     <div class="logo">VÆLKR®</div>
@@ -586,51 +628,43 @@
 
     <div class="shop-grid">
 
-      <a class="shop-card" href="#basic">
-        <div class="shop-image">
-          <span class="shirt-text">FUCK OFF.</span>
-        </div>
-        <div class="shop-info">
-          <h3>BASIC / TEXT</h3>
-          <p>Statement text. Nothing else needed.</p>
-          <span class="shop-price">FROM 12,90 €</span>
-          <span class="shop-label">01 — EXPLORE</span>
-        </div>
-      </a>
-
-      <a class="shop-card" href="#customtext">
-        <div class="shop-image">
-          <span class="shirt-text back">YOUR<br>WORDS.</span>
-        </div>
-        <div class="shop-info">
-          <h3>CUSTOM TEXT</h3>
-          <p>Your phrase. Front or back.</p>
-          <span class="shop-price">14,90–17,90 €</span>
-          <span class="shop-label">02 — EXPLORE</span>
-        </div>
-      </a>
-
       <a class="shop-card" href="#essentials">
-        <div class="shop-image">
-          <span class="shirt-text small">VÆLKR®</span>
-        </div>
+        <div class="shop-image"><span class="shirt-text small">VÆLKR®</span></div>
         <div class="shop-info">
           <h3>VÆLKR ESSENTIALS</h3>
           <p>The VÆLKR name. Nothing extra.</p>
           <span class="shop-price">11,90 €</span>
-          <span class="shop-label">04 — EXPLORE</span>
+          <span class="shop-label">01 — EXPLORE</span>
+        </div>
+      </a>
+
+      <a class="shop-card" href="#basic">
+        <div class="shop-image"><span class="shirt-text">FUCK OFF.</span></div>
+        <div class="shop-info">
+          <h3>BASIC / TEXT</h3>
+          <p>Statement text. Nothing else needed.</p>
+          <span class="shop-price">12,90 €</span>
+          <span class="shop-label">02 — EXPLORE</span>
+        </div>
+      </a>
+
+      <a class="shop-card" href="#customtext">
+        <div class="shop-image"><span class="shirt-text back">YOUR<br>WORDS.</span></div>
+        <div class="shop-info">
+          <h3>CUSTOM TEXT</h3>
+          <p>Your phrase. Front or back.</p>
+          <span class="shop-price">14,90–17,90 €</span>
+          <span class="shop-label">03 — EXPLORE</span>
         </div>
       </a>
 
       <a class="shop-card" href="#oneofone">
-        <div class="shop-image">
-          <span class="shirt-text back">ONE<br>OF<br>ONE.</span>
-        </div>
+        <div class="shop-image"><span class="shirt-text back">ONE<br>OF<br>ONE.</span></div>
         <div class="shop-info">
           <h3>ONE OF ONE</h3>
           <p>Hand-painted. Individually made.</p>
           <span class="shop-price">FROM 24,90 €</span>
-          <span class="shop-label">03 — EXPLORE</span>
+          <span class="shop-label">04 — EXPLORE</span>
         </div>
       </a>
 
@@ -880,7 +914,13 @@
   </section>
 
   <footer>
-    VÆLKR — WORN DIFFERENT.
+    <span>VÆLKR® — WORN DIFFERENT.</span>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#shop">SHOP</a>
+      <a href="#about">ABOUT</a>
+      <a href="#pedido">ORDER REQUEST</a>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">BACK TO TOP ↑</a>
+    </nav>
   </footer>
 
   <!-- JAVASCRIPT -->
@@ -897,8 +937,8 @@
     };
 
     // PERSONALIZA ESTOS DATOS ANTES DE PUBLICAR LA WEB.
-    const INSTAGRAM_URL = "https://www.instagram.com/vaelkrr_/";
-    const CONTACT_EMAIL = "vaelkrr@gmail.com";
+    const INSTAGRAM_URL = "https://www.instagram.com/TU_USUARIO/";
+    const CONTACT_EMAIL = "TU_CORREO@gmail.com";
     document.getElementById("instagram-link").href = INSTAGRAM_URL;
     document.getElementById("email-link").href = "mailto:" + CONTACT_EMAIL;
 
