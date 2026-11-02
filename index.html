@@ -870,8 +870,8 @@
         <input id="request-name" name="name" autocomplete="name" required placeholder="Your name">
       </div>
       <div class="form-field">
-        <label for="request-contact">CONTACT METHOD</label>
-        <input id="request-contact" name="contact" required placeholder="Instagram @ or email">
+        <label for="request-contact">YOUR CONTACT (SO WE CAN REPLY)</label>
+        <input id="request-contact" name="contact" required placeholder="Your Instagram @ or email">
       </div>
       <div class="form-field">
         <label for="request-product">PIECE</label>
@@ -903,16 +903,16 @@
       <div class="request-actions">
         <button class="add-button" type="submit">PREPARE REQUEST</button>
       </div>
-      <p class="form-help form-field full">This form prepares your message on this device. You can send it by email or copy it into an Instagram DM. Your request is not submitted until you send the message.</p>
+      <p class="form-help form-field full">Fill in your contact details so VÆLKR can reply. Your request is prepared on this device; it is only sent when you choose a contact option below.</p>
     </form>
 
     <div class="request-result" id="request-result" aria-live="polite">
-      <p>Your request is ready. Choose how you want to contact VÆLKR. The message will be prepared for you, but you must send it yourself.</p>
+      <p>Your request is ready. Instagram is the preferred way to contact VÆLKR. You can also send the request by email. Nothing is sent until you choose an option.</p>
       <textarea id="request-message" readonly aria-label="Prepared order request"></textarea>
       <div class="request-actions">
-        <a class="hero-button" id="email-link" href="mailto:vaelkrr@gmail.com">SEND BY EMAIL ↗</a>
-        <button class="add-button" type="button" onclick="copyRequest()">COPY FOR INSTAGRAM</button>
-        <a class="hero-button" id="instagram-link" href="https://www.instagram.com/vaelkrr_/" target="_blank" rel="noopener">OPEN INSTAGRAM ↗</a>
+        <a class="hero-button" id="instagram-link" href="https://www.instagram.com/vaelkrr_/" target="_blank" rel="noopener">CONTACT VIA INSTAGRAM ↗</a>
+        <button class="add-button" type="button" onclick="copyRequest()">COPY REQUEST FOR DM</button>
+        <a class="hero-button" id="email-link" href="mailto:vaelkrr@gmail.com">EMAIL INSTEAD ↗</a>
       </div>
       <p class="form-help" id="copy-status" role="status"></p>
     </div>
