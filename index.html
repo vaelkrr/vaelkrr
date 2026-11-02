@@ -351,6 +351,29 @@
       margin-bottom: 30px;
     }
 
+    .product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: -12px 0 25px;
+    }
+
+    .product-specs span {
+      border: 1px solid #494943;
+      color: #aaa69c;
+      padding: 7px 10px;
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .product-availability {
+      color: #aaa69c;
+      font-size: 10px;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+
     .field-label {
       display: block;
       font-size: 10px;
@@ -757,9 +780,10 @@
             <p class="product-price">12,90 €</p>
 
             <p class="product-description">
-              Black T-shirt. Pink statement lettering.
-              No unnecessary details. Made to stand out.
+              A black tee with a bold pink statement on the front.
+              Designed by VÆLKR and painted by hand.
             </p>
+            <div class="product-specs"><span>Black tee</span><span>Pink lettering</span><span>Hand-painted</span></div>
 
             <label class="field-label" for="size">
               SELECT SIZE
@@ -803,7 +827,8 @@
           <p class="product-category">VÆLKR — CUSTOM TEXT</p>
           <h3>YOUR TEXT.</h3>
           <p class="product-price">14,90–17,90 €</p>
-          <p class="product-description">A custom phrase, one colour. Choose front or back; more elaborate designs may cost more.</p>
+          <p class="product-description">Your words, turned into a VÆLKR piece. Choose the phrase, placement and size; the final price depends on the lettering and work involved.</p>
+          <div class="product-specs"><span>Up to 30 characters</span><span>Front or back</span><span>One colour</span></div>
           <label class="field-label" for="custom-text">WRITE YOUR TEXT</label>
           <input class="size-select" id="custom-text" type="text" maxlength="30" placeholder="YOUR PHRASE..." autocomplete="off">
           <label class="field-label" for="custom-placement">PLACEMENT</label>
@@ -831,7 +856,8 @@
           <p class="product-category">VÆLKR ESSENTIALS — LOGO 001</p>
           <h3>VÆLKR®</h3>
           <p class="product-price">11,90 €</p>
-          <p class="product-description">Minimal logo on the front. The simplest way to wear the brand.</p>
+          <p class="product-description">The VÆLKR signature, kept deliberately minimal. A small logo on the front for an everyday piece.</p>
+          <div class="product-specs"><span>Minimal logo</span><span>Front placement</span><span>Everyday</span></div>
           <label class="field-label" for="essentials-size">SELECT SIZE</label>
           <select class="size-select" id="essentials-size"><option value="">CHOOSE YOUR SIZE</option><option value="XS">XS</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="XXL">XXL</option></select>
           <p class="stock-note">Made to order. Availability will be confirmed before accepting the request.</p>
@@ -849,10 +875,11 @@
       </div>
 
       <p>
-        Hand-painted pieces. Unique designs.
-        No two pieces have to be exactly alike.
+        Original hand-painted designs, developed as individual pieces.
+        Each release is made in a limited quantity or as a one-off.
       </p>
-
+      <div class="product-specs"><span>Original artwork</span><span>Hand-painted</span><span>Limited / one-off</span></div>
+      <p class="product-availability">Starting price shown as a guide. The final price depends on the design and materials, and is confirmed before production.</p>
       <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
     </div>
 
@@ -862,7 +889,7 @@
 
   <section class="section request-section" id="pedido">
     <h2>05 / REQUEST YOUR PIECE</h2>
-    <p class="section-intro">No payment is taken on this website. Send a request and VÆLKR will confirm availability, final details and delivery costs before anything is agreed.</p>
+    <p class="section-intro">Choose your piece and size. Sizes XS–XXL are available to request; availability, final details and delivery costs are confirmed before anything is agreed. No payment is taken on this website.</p>
 
     <form class="request-form" id="request-form">
       <div class="form-field">
