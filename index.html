@@ -1288,7 +1288,7 @@
        Se muestra como orientación; la disponibilidad final siempre se confirma por Instagram. */
 
     const STOCK = {
-      "FUCK OFF. — STATEMENT 001": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
+      "FUCK OFF.": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
       "YOUR TEXT. — CUSTOM": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
       "VÆLKR ESSENTIALS — LOGO 001": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 },
       "ONE OF ONE — custom hand-painted": { XS: 0, S: 0, M: 0, L: 0, XL: 0, XXL: 0 }
@@ -1309,12 +1309,13 @@
         return;
       }
 
-      document.getElementById("request-product").value = name === "FUCK OFF."
-        ? "FUCK OFF. — STATEMENT 001" : name;
-
+      const productValue = name === "FUCK OFF." ? "FUCK OFF." : name;
+      document.getElementById("request-product").value = productValue;
       document.getElementById("request-size").value = size;
-      document.getElementById("request-custom-field").hidden = name !== "YOUR TEXT.";
+      document.getElementById("request-custom-field").hidden = productValue !== "YOUR TEXT. — CUSTOM";
       document.getElementById("request-text").value = "";
+      document.getElementById("request-result").classList.remove("show");
+      document.getElementById("copy-status").textContent = "";
       document.getElementById("pedido").scrollIntoView({ behavior: "smooth" });
     }
 
@@ -1337,11 +1338,15 @@
       document.getElementById("request-custom-field").hidden = false;
       document.getElementById("request-text").value = phrase;
       document.getElementById("request-placement").value = document.getElementById("custom-placement").value;
+      document.getElementById("request-result").classList.remove("show");
+      document.getElementById("copy-status").textContent = "";
       document.getElementById("pedido").scrollIntoView({ behavior: "smooth" });
     }
 
     document.getElementById("request-product").addEventListener("change", function () {
       document.getElementById("request-custom-field").hidden = this.value !== "YOUR TEXT. — CUSTOM";
+      document.getElementById("request-result").classList.remove("show");
+      document.getElementById("copy-status").textContent = "";
     });
 
     document.getElementById("request-form").addEventListener("submit", function (event) {
@@ -1362,7 +1367,7 @@
       const quantity = STOCK[product]?.[size] ?? 0;
 
       const stockLine = quantity > 0
-        ? `Stock noted in the site code for this size: ${quantity}. Please confirm.`
+        ? `Unidades indicadas en la web para esta talla: ${quantity}. Pendiente de confirmar.`
         : "Se prepara bajo pedido; disponibilidad pendiente de confirmar.";
 
       const message = [
@@ -1373,8 +1378,8 @@
         `Talla: ${size}`,
         phrase ? `Frase personalizada: ${phrase}` : "",
         product === "YOUR TEXT. — CUSTOM" ? `Ubicación: ${document.getElementById("request-placement").value}` : "",
-        `Availability: ${stockLine}`,
-        notes ? `Extra details: ${notes}` : "",
+        `Disponibilidad: ${stockLine}`,
+        notes ? `Detalles adicionales: ${notes}` : "",
         "Por favor, confirma la disponibilidad, el precio final y los gastos de envío antes de cerrar el pedido."
       ].filter(Boolean).join("\n");
 
