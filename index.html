@@ -699,6 +699,57 @@
       .gallery { grid-template-columns: 1fr; }
       footer { padding: 25px 5%; }
     }
+    
+/* VÆLKR — contraste en las tarjetas de SHOP */
+
+.shop-card {
+  border: 1px solid rgba(241, 238, 231, 0.12);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.shop-card:hover {
+  border-color: #C9BBA5;
+  transform: translateY(-3px);
+}
+
+.shop-info {
+  padding: 18px;
+}
+
+.shop-label {
+  color: #C9BBA5;
+  letter-spacing: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.shop-price {
+  color: #F1EEE7;
+  font-weight: 600;
+}
+
+/* Detalles beige para las colecciones especiales */
+.shop-card.essentials,
+.shop-card.one-of-one {
+  border-color: rgba(201, 187, 165, 0.45);
+}
+
+.shop-card.essentials .shop-label,
+.shop-card.one-of-one .shop-label {
+  color: #C9BBA5;
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .shop-info {
+    padding: 15px;
+  }
+
+  .shop-card:hover {
+    transform: none;
+  }
+}
+
   </style>
 </head>
 
