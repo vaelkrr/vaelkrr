@@ -897,9 +897,62 @@
     </div>
   </section>
 
-  <!-- BASIC / TEXT -->
-
   <section class="section">
+
+    <!-- ESSENTIALS -->
+
+    <div class="collection-block" id="essentials">
+      <div class="collection-heading">
+        <h3>01 — VÆLKR ESSENTIALS</h3>
+        <span>11,90 €</span>
+      </div>
+
+      <p>El nombre VÆLKR® como firma, pintado en pequeño en la parte delantera.</p>
+
+      <div class="product">
+        <div class="product-visual">
+          <img src="vaelkr.png" alt="Camiseta VÆLKR Essentials con el logo en una esquina" style="width:100%;height:100%;object-fit:contain;padding:18px;">
+        </div>
+
+        <div class="product-details">
+          <p class="product-category">VÆLKR ESSENTIALS — LOGO 001</p>
+          <h3>VÆLKR®</h3>
+          <p class="product-price">11,90 €</p>
+
+          <p class="product-description">
+            La firma de VÆLKR, deliberadamente minimalista. Un pequeño logotipo delante para una prenda de diario.
+          </p>
+
+          <div class="product-specs">
+            <span>Logotipo minimalista</span>
+            <span>Ubicación delantera</span>
+            <span>Para diario</span>
+          </div>
+
+          <label class="field-label" for="essentials-size">ELIGE TU TALLA</label>
+          <select class="size-select" id="essentials-size">
+            <option value="">ELIGE TU TALLA</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+
+          <p class="stock-note">
+            Se prepara bajo pedido. Confirmaremos la disponibilidad antes de aceptar la solicitud.
+          </p>
+
+          <button class="add-button" type="button" onclick="prepareRequest('VÆLKR ESSENTIALS — LOGO 001', 11.90, 'essentials-size')">
+            SOLICITAR PRENDA
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- BASIC / TEXT -->
     <div class="collection-block" id="basic">
 
       <div class="collection-heading">
@@ -970,6 +1023,7 @@
       </div>
     </div>
 
+
     <!-- CUSTOM TEXT -->
 
     <div class="collection-block" id="customtext">
@@ -1032,57 +1086,6 @@
       </div>
     </div>
 
-    <!-- ESSENTIALS -->
-
-    <div class="collection-block" id="essentials">
-      <div class="collection-heading">
-        <h3>01 — VÆLKR ESSENTIALS</h3>
-        <span>11,90 €</span>
-      </div>
-
-      <p>El nombre VÆLKR® como firma, pintado en pequeño en la parte delantera.</p>
-
-      <div class="product">
-        <div class="product-visual">
-          <img src="vaelkr.png" alt="Camiseta VÆLKR Essentials con el logo en una esquina" style="width:100%;height:100%;object-fit:contain;padding:18px;">
-        </div>
-
-        <div class="product-details">
-          <p class="product-category">VÆLKR ESSENTIALS — LOGO 001</p>
-          <h3>VÆLKR®</h3>
-          <p class="product-price">11,90 €</p>
-
-          <p class="product-description">
-            La firma de VÆLKR, deliberadamente minimalista. Un pequeño logotipo delante para una prenda de diario.
-          </p>
-
-          <div class="product-specs">
-            <span>Logotipo minimalista</span>
-            <span>Ubicación delantera</span>
-            <span>Para diario</span>
-          </div>
-
-          <label class="field-label" for="essentials-size">ELIGE TU TALLA</label>
-          <select class="size-select" id="essentials-size">
-            <option value="">ELIGE TU TALLA</option>
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-          </select>
-
-          <p class="stock-note">
-            Se prepara bajo pedido. Confirmaremos la disponibilidad antes de aceptar la solicitud.
-          </p>
-
-          <button class="add-button" type="button" onclick="prepareRequest('VÆLKR ESSENTIALS — LOGO 001', 11.90, 'essentials-size')">
-            SOLICITAR PRENDA
-          </button>
-        </div>
-      </div>
-    </div>
 
     <!-- ONE OF ONE -->
 
@@ -1143,9 +1146,9 @@
         <label for="request-product">PRENDA</label>
         <select id="request-product" name="product" required>
           <option value="">Elige una prenda</option>
-          <option value="FUCK OFF. — STATEMENT 001">BASIC TEXT — 12,90 €</option>
-          <option value="YOUR TEXT. — CUSTOM">CUSTOM TEXT — 14,90–17,90 €</option>
-          <option value="VÆLKR ESSENTIALS — LOGO 001">VÆLKR ESSENTIALS — 11,90 €</option>
+          <option value="VÆLKR ESSENTIALS — LOGO 001">01 — VÆLKR ESSENTIALS — 11,90 €</option>
+          <option value="FUCK OFF.">02 — BASIC / TEXT — 12,90 €</option>
+          <option value="YOUR TEXT. — CUSTOM">03 — CUSTOM TEXT — 14,90–17,90 €</option>
         </select>
       </div>
 
