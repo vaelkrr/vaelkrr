@@ -1107,10 +1107,24 @@
       </div>
 
       <p class="product-availability">
-        El precio inicial es orientativo. El precio final depende del diseño y los materiales, y se confirma antes de producir la prenda.
+        ¿Tienes una idea, una ilustración o una referencia que te gustaría llevar en una camiseta? Cuéntame qué tienes en mente y la valoraremos juntas. El precio final depende del diseño, el tamaño y los materiales, y se confirma antes de producir la prenda.
       </p>
 
-      <div class="coming-soon">PRIMER LANZAMIENTO — PRÓXIMAMENTE</div>
+      <label class="field-label" for="oneofone-size">ELIGE TU TALLA</label>
+      <select class="size-select" id="oneofone-size">
+        <option value="">ELIGE TU TALLA</option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+      </select>
+
+      <button class="add-button" type="button" onclick="prepareRequest('ONE OF ONE — custom hand-painted', 24.90, 'oneofone-size'); document.getElementById('request-notes').placeholder = 'Describe tu idea, colores, estilo o adjunta la referencia cuando contactes…';">
+        PEDIR MI DISEÑO PERSONALIZADO
+      </button>
+      <p class="product-note">DESDE 24,90 € · CADA IDEA SE VALORA INDIVIDUALMENTE.</p>
     </div>
 
   </section>
@@ -1149,6 +1163,7 @@
           <option value="VÆLKR ESSENTIALS — LOGO 001">01 — VÆLKR ESSENTIALS — 11,90 €</option>
           <option value="FUCK OFF.">02 — BASIC / TEXT — 12,90 €</option>
           <option value="YOUR TEXT. — CUSTOM">03 — CUSTOM TEXT — 14,90–17,90 €</option>
+          <option value="ONE OF ONE — custom hand-painted">04 — ONE OF ONE — DESDE 24,90 €</option>
         </select>
       </div>
 
