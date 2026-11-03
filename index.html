@@ -745,13 +745,17 @@
   font-weight: 600;
 }
 
-/* Beige solo como detalle en Essentials y One of One */
+/* Las cuatro tarjetas comparten la misma base; beige solo en hover y detalles */
 .shop-card:nth-child(1),
+.shop-card:nth-child(2),
+.shop-card:nth-child(3),
 .shop-card:nth-child(4) {
-  border-color: rgba(201, 187, 165, 0.45);
+  border-color: rgba(241, 238, 231, 0.16);
 }
 
 .shop-card:nth-child(1) .shop-label,
+.shop-card:nth-child(2) .shop-label,
+.shop-card:nth-child(3) .shop-label,
 .shop-card:nth-child(4) .shop-label {
   color: #C9BBA5;
 }
@@ -801,9 +805,9 @@
     <div class="logo">VÆLKR®</div>
 
     <nav>
-      <a href="#shop">SHOP</a>
-      <a href="#about">ABOUT</a>
-      <a href="#pedido">ORDER REQUEST</a>
+      <a href="#shop">TIENDA</a>
+      <a href="#about">LA MARCA</a>
+      <a href="#pedido">PEDIDOS</a>
     </nav>
   </header>
 
@@ -811,8 +815,8 @@
     <img class="hero-photo" src="campaign-001.jpeg" alt="VÆLKR campaign — original brand image">
 
     <div class="hero-top">
-      <span>INDEPENDENT LABEL — EST. 2026</span>
-      <span>001 / ORIGINAL PIECES</span>
+      <span>MARCA INDEPENDIENTE — DESDE 2026</span>
+      <span>001 / PRENDAS ORIGINALES</span>
     </div>
 
     <p class="tag">NOT HERE TO FOLLOW.</p>
@@ -826,13 +830,13 @@
       <div>
         <p class="slogan">NOT MADE TO FIT IN.</p>
         <p class="description">
-          Hand-painted clothing.<br>
-          Original ideas. No copies.
+          Prendas pintadas a mano.<br>
+          Ideas originales. Sin copias.
         </p>
       </div>
 
       <a class="hero-button" href="#shop">
-        EXPLORE THE SHOP ↘
+        VER LA TIENDA ↘
       </a>
     </div>
 
@@ -842,10 +846,10 @@
   <!-- SHOP -->
 
   <section class="section" id="shop">
-    <h2>01 / SHOP THE COLLECTIONS</h2>
+    <h2>01 / EXPLORA LAS COLECCIONES</h2>
 
     <p class="section-intro">
-      FOUR WAYS TO WEAR VÆLKR. REQUESTS CONFIRMED BEFORE PRODUCTION.
+      CUATRO FORMAS DE LLEVAR VÆLKR. CONFIRMAMOS CADA PEDIDO ANTES DE PRODUCIRLO.
     </p>
 
     <div class="shop-grid">
@@ -854,9 +858,9 @@
         <div class="shop-image"><span class="shirt-text small">VÆLKR®</span></div>
         <div class="shop-info">
           <h3>VÆLKR ESSENTIALS</h3>
-          <p>The VÆLKR name. Nothing extra.</p>
+          <p>El nombre de VÆLKR. Nada más.</p>
           <span class="shop-price">11,90 €</span>
-          <span class="shop-label">01 — EXPLORE</span>
+          <span class="shop-label">01 — VER PRENDA</span>
         </div>
       </a>
 
@@ -864,9 +868,9 @@
         <div class="shop-image"><span class="shirt-text">FUCK OFF.</span></div>
         <div class="shop-info">
           <h3>BASIC / TEXT</h3>
-          <p>Statement text. Nothing else needed.</p>
+          <p>Una frase con carácter. Nada más.</p>
           <span class="shop-price">12,90 €</span>
-          <span class="shop-label">02 — EXPLORE</span>
+          <span class="shop-label">02 — VER PRENDA</span>
         </div>
       </a>
 
@@ -874,9 +878,9 @@
         <div class="shop-image"><span class="shirt-text back">YOUR<br>WORDS.</span></div>
         <div class="shop-info">
           <h3>CUSTOM TEXT</h3>
-          <p>Your phrase. Front or back.</p>
+          <p>Tu frase, delante o detrás.</p>
           <span class="shop-price">14,90–17,90 €</span>
-          <span class="shop-label">03 — EXPLORE</span>
+          <span class="shop-label">03 — VER PRENDA</span>
         </div>
       </a>
 
@@ -884,9 +888,9 @@
         <div class="shop-image"><span class="shirt-text back">ONE<br>OF<br>ONE.</span></div>
         <div class="shop-info">
           <h3>ONE OF ONE</h3>
-          <p>Hand-painted. Individually made.</p>
+          <p>Pintada a mano. Creada individualmente.</p>
           <span class="shop-price">FROM 24,90 €</span>
-          <span class="shop-label">04 — EXPLORE</span>
+          <span class="shop-label">04 — VER PRENDA</span>
         </div>
       </a>
 
@@ -899,13 +903,13 @@
     <div class="collection-block" id="basic">
 
       <div class="collection-heading">
-        <h3>01 — BASIC / TEXT</h3>
+        <h3>02 — BASIC / TEXT</h3>
         <span>12,90 €</span>
       </div>
 
       <p>
-        Bold statements. Clean designs.
-        Text placed front or back. Nothing unnecessary.
+        Frases con carácter y diseños limpios.
+        Texto delante o detrás. Nada innecesario.
       </p>
 
       <div class="product">
@@ -925,22 +929,22 @@
           <p class="product-price">12,90 €</p>
 
           <p class="product-description">
-            A bold statement, designed by VÆLKR and painted by hand.
-            Choose your preferred T-shirt and lettering colours.
+            Una frase con carácter, diseñada por VÆLKR y pintada a mano.
+            Elige el color de la camiseta y el de las letras.
           </p>
 
           <div class="product-specs">
-            <span>Custom tee colour</span>
-            <span>Custom lettering colour</span>
-            <span>Hand-painted</span>
+            <span>Color de camiseta a elegir</span>
+            <span>Color de letras a elegir</span>
+            <span>Pintada a mano</span>
           </div>
 
           <label class="field-label" for="size">
-            SELECT SIZE
+            ELIGE TU TALLA
           </label>
 
           <select class="size-select" id="size">
-            <option value="">CHOOSE YOUR SIZE</option>
+            <option value="">ELIGE TU TALLA</option>
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -950,12 +954,12 @@
           </select>
 
           <p class="stock-note" id="stock-size">
-            Made to order. Availability will be confirmed before accepting the request.
+            Se prepara bajo pedido. Confirmaremos la disponibilidad antes de aceptar la solicitud.
           </p>
 
           <button class="add-button" type="button"
             onclick="prepareRequest('FUCK OFF.', 12.90, 'size')">
-            REQUEST ORDER
+            SOLICITAR PRENDA
           </button>
 
           <p class="product-note">
@@ -970,11 +974,11 @@
 
     <div class="collection-block" id="customtext">
       <div class="collection-heading">
-        <h3>02 — CUSTOM TEXT</h3>
+        <h3>03 — CUSTOM TEXT</h3>
         <span>14,90–17,90 €</span>
       </div>
 
-      <p>Your own phrase, painted on the front or back. Final price depends on size and complexity.</p>
+      <p>Tu propia frase, pintada delante o detrás. El precio final depende del tamaño y la complejidad.</p>
 
       <div class="product">
         <div class="product-visual">
@@ -987,28 +991,28 @@
           <p class="product-price">14,90–17,90 €</p>
 
           <p class="product-description">
-            Your words, turned into a VÆLKR piece. Choose the phrase, placement and size; the final price depends on the lettering and work involved.
+            Tus palabras convertidas en una prenda VÆLKR. Elige la frase, la ubicación y la talla; el precio final depende de las letras y del trabajo necesario.
           </p>
 
           <div class="product-specs">
-            <span>Up to 30 characters</span>
-            <span>Front or back</span>
-            <span>One colour</span>
+            <span>Hasta 30 caracteres</span>
+            <span>Delante o detrás</span>
+            <span>Un color</span>
           </div>
 
-          <label class="field-label" for="custom-text">WRITE YOUR TEXT</label>
-          <input class="size-select" id="custom-text" type="text" maxlength="30" placeholder="YOUR PHRASE..." autocomplete="off">
+          <label class="field-label" for="custom-text">ESCRIBE TU FRASE</label>
+          <input class="size-select" id="custom-text" type="text" maxlength="30" placeholder="TU FRASE..." autocomplete="off">
 
-          <label class="field-label" for="custom-placement">PLACEMENT</label>
+          <label class="field-label" for="custom-placement">UBICACIÓN</label>
           <select class="size-select" id="custom-placement">
-            <option value="Front">FRONT</option>
-            <option value="Back">BACK</option>
-            <option value="Both">BOTH (FRONT + BACK)</option>
+            <option value="Front">DELANTE</option>
+            <option value="Back">DETRÁS</option>
+            <option value="Both">AMBAS (DELANTE Y DETRÁS)</option>
           </select>
 
-          <label class="field-label" for="custom-size">SELECT SIZE</label>
+          <label class="field-label" for="custom-size">ELIGE TU TALLA</label>
           <select class="size-select" id="custom-size">
-            <option value="">CHOOSE YOUR SIZE</option>
+            <option value="">ELIGE TU TALLA</option>
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -1018,12 +1022,12 @@
           </select>
 
           <p class="stock-note" id="stock-custom-size">
-            Made to order. Availability will be confirmed before accepting the request.
+            Se prepara bajo pedido. Confirmaremos la disponibilidad antes de aceptar la solicitud.
           </p>
 
-          <button class="add-button" type="button" onclick="prepareCustomRequest()">REQUEST ORDER</button>
+          <button class="add-button" type="button" onclick="prepareCustomRequest()">SOLICITAR PRENDA</button>
 
-          <p class="product-note">Maximum 30 characters. Final price confirmed before production.</p>
+          <p class="product-note">Máximo 30 caracteres. Confirmaremos el precio final antes de producir la prenda.</p>
         </div>
       </div>
     </div>
@@ -1032,11 +1036,11 @@
 
     <div class="collection-block" id="essentials">
       <div class="collection-heading">
-        <h3>03 — VÆLKR ESSENTIALS</h3>
+        <h3>01 — VÆLKR ESSENTIALS</h3>
         <span>11,90 €</span>
       </div>
 
-      <p>The signature VÆLKR® name, painted small on the front corner.</p>
+      <p>El nombre VÆLKR® como firma, pintado en pequeño en la parte delantera.</p>
 
       <div class="product">
         <div class="product-visual">
@@ -1049,18 +1053,18 @@
           <p class="product-price">11,90 €</p>
 
           <p class="product-description">
-            The VÆLKR signature, kept deliberately minimal. A small logo on the front for an everyday piece.
+            La firma de VÆLKR, deliberadamente minimalista. Un pequeño logotipo delante para una prenda de diario.
           </p>
 
           <div class="product-specs">
-            <span>Minimal logo</span>
-            <span>Front placement</span>
-            <span>Everyday</span>
+            <span>Logotipo minimalista</span>
+            <span>Ubicación delantera</span>
+            <span>Para diario</span>
           </div>
 
-          <label class="field-label" for="essentials-size">SELECT SIZE</label>
+          <label class="field-label" for="essentials-size">ELIGE TU TALLA</label>
           <select class="size-select" id="essentials-size">
-            <option value="">CHOOSE YOUR SIZE</option>
+            <option value="">ELIGE TU TALLA</option>
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
@@ -1070,11 +1074,11 @@
           </select>
 
           <p class="stock-note">
-            Made to order. Availability will be confirmed before accepting the request.
+            Se prepara bajo pedido. Confirmaremos la disponibilidad antes de aceptar la solicitud.
           </p>
 
           <button class="add-button" type="button" onclick="prepareRequest('VÆLKR ESSENTIALS — LOGO 001', 11.90, 'essentials-size')">
-            REQUEST ORDER
+            SOLICITAR PRENDA
           </button>
         </div>
       </div>
@@ -1089,21 +1093,21 @@
       </div>
 
       <p>
-        Original hand-painted designs, developed as individual pieces.
-        Each release is made in a limited quantity or as a one-off.
+        Diseños originales pintados a mano y desarrollados como piezas individuales.
+        Cada lanzamiento se crea en cantidades limitadas o como pieza única.
       </p>
 
       <div class="product-specs">
-        <span>Original artwork</span>
-        <span>Hand-painted</span>
-        <span>Limited / one-off</span>
+        <span>Diseño original</span>
+        <span>Pintada a mano</span>
+        <span>Limitada / pieza única</span>
       </div>
 
       <p class="product-availability">
-        Starting price shown as a guide. The final price depends on the design and materials, and is confirmed before production.
+        El precio inicial es orientativo. El precio final depende del diseño y los materiales, y se confirma antes de producir la prenda.
       </p>
 
-      <div class="coming-soon">FIRST RELEASE — COMING SOON</div>
+      <div class="coming-soon">PRIMER LANZAMIENTO — PRÓXIMAMENTE</div>
     </div>
 
   </section>
@@ -1111,10 +1115,10 @@
   <!-- SOLICITUD DE PEDIDO -->
 
   <section class="section request-section" id="pedido">
-    <h2>05 / REQUEST YOUR PIECE</h2>
+    <h2>05 / SOLICITA TU PRENDA</h2>
 
     <p class="section-intro">
-      Choose your piece and size. Sizes XS–XXL are available to request; availability, final details and delivery costs are confirmed before anything is agreed. No payment is taken on this website.
+      Elige la prenda y la talla. Puedes solicitar tallas XS–XXL; confirmaremos la disponibilidad, los detalles finales y los gastos de envío antes de cerrar el pedido. Esta web no acepta pagos.
     </p>
 
     <div class="order-notice">
@@ -1126,78 +1130,77 @@
     <form class="request-form" id="request-form">
 
       <div class="form-field">
-        <label for="request-name">NAME</label>
-        <input id="request-name" name="name" autocomplete="name" required placeholder="Your name">
+        <label for="request-name">NOMBRE</label>
+        <input id="request-name" name="name" autocomplete="name" required placeholder="Tu nombre">
       </div>
 
       <div class="form-field">
-        <label for="request-contact">YOUR CONTACT (SO WE CAN REPLY)</label>
-        <input id="request-contact" name="contact" required placeholder="Your Instagram @ or email">
+        <label for="request-contact">TU CONTACTO (PARA RESPONDERTE)</label>
+        <input id="request-contact" name="contact" required placeholder="Tu Instagram @ o correo electrónico">
       </div>
 
       <div class="form-field">
-        <label for="request-product">PIECE</label>
+        <label for="request-product">PRENDA</label>
         <select id="request-product" name="product" required>
-          <option value="">Choose a piece</option>
+          <option value="">Elige una prenda</option>
           <option value="FUCK OFF. — STATEMENT 001">BASIC TEXT — 12,90 €</option>
           <option value="YOUR TEXT. — CUSTOM">CUSTOM TEXT — 14,90–17,90 €</option>
           <option value="VÆLKR ESSENTIALS — LOGO 001">VÆLKR ESSENTIALS — 11,90 €</option>
-          <option value="ONE OF ONE — custom hand-painted">ONE OF ONE — from 24,90 €</option>
         </select>
       </div>
 
       <div class="form-field">
-        <label for="request-size">SIZE</label>
+        <label for="request-size">TALLA</label>
         <select id="request-size" name="size" required>
-          <option value="">Choose a size</option>
+          <option value="">Elige una talla</option>
           <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
         </select>
       </div>
 
       <div class="form-field full" id="request-custom-field" hidden>
-        <label for="request-text">YOUR TEXT (MAX. 30 CHARACTERS)</label>
-        <input id="request-text" maxlength="30" placeholder="Your phrase">
+        <label for="request-text">TU FRASE (MÁX. 30 CARACTERES)</label>
+        <input id="request-text" maxlength="30" placeholder="Tu frase">
 
-        <label for="request-placement">PLACEMENT</label>
+        <label for="request-placement">UBICACIÓN</label>
         <select id="request-placement">
-          <option value="Front">Front</option>
-          <option value="Back">Back</option>
-          <option value="Both">Both (front + back)</option>
+          <option value="Front">Delante</option>
+          <option value="Back">Detrás</option>
+          <option value="Both">Ambas (delante y detrás)</option>
         </select>
       </div>
 
       <div class="form-field full">
-        <label for="request-notes">EXTRA DETAILS (OPTIONAL)</label>
-        <textarea id="request-notes" placeholder="Colour, placement, questions or anything else..."></textarea>
+        <label for="request-notes">DETALLES ADICIONALES (OPCIONAL)</label>
+        <textarea id="request-notes" placeholder="Color, ubicación, dudas o cualquier otro detalle..."></textarea>
       </div>
 
       <div class="request-actions">
-        <button class="add-button" type="submit">PREPARE REQUEST</button>
+        <button class="add-button" type="submit">PREPARAR SOLICITUD</button>
       </div>
 
       <p class="form-help form-field full">
-        Fill in your contact details so VÆLKR can reply. Your request is prepared on this device; it is only sent when you choose a contact option below.
+        Incluye tus datos de contacto para que VÆLKR pueda responderte. La solicitud se prepara en este dispositivo y solo se envía cuando eliges una opción de contacto.
       </p>
     </form>
 
     <div class="request-result" id="request-result" aria-live="polite">
       <p>
-        Your request is ready. Instagram is the preferred way to contact VÆLKR. You can also send the request by email. Nothing is sent until you choose an option.
+        Tu solicitud está lista. Preferimos contactar por Instagram, pero también puedes enviarla por correo electrónico. No se envía nada hasta que elijas una opción.
       </p>
 
-      <textarea id="request-message" readonly aria-label="Prepared order request"></textarea>
+      <textarea id="request-message" readonly aria-label="Solicitud de pedido preparada"></textarea>
 
       <div class="request-actions">
         <a class="hero-button" id="instagram-link" href="https://www.instagram.com/vaelkrr_/" target="_blank" rel="noopener">
-          CONTACT VIA INSTAGRAM ↗
+          CONTACTAR POR INSTAGRAM ↗
         </a>
 
         <button class="add-button" type="button" onclick="copyRequest()">
-          COPY REQUEST FOR DM
+          COPIAR SOLICITUD PARA MENSAJE
         </button>
 
         <a class="hero-button" id="email-link" href="mailto:vaelkrr@gmail.com">
-          EMAIL INSTEAD ↗
+          ENVIAR POR CORREO ↗
         </a>
       </div>
 
@@ -1208,10 +1211,10 @@
   <!-- ARCHIVE -->
 
   <section class="section" id="archive">
-    <h2>02 / THE ARCHIVE</h2>
+    <h2>06 / EL ARCHIVO</h2>
 
     <p class="section-intro">
-      EVERY PIECE HAS A STORY.
+      CADA PRENDA TIENE UNA HISTORIA.
     </p>
 
     <div class="gallery">
@@ -1219,15 +1222,15 @@
       <figure>
         <img src="boceto.jpeg" alt="Proceso de creación de VÆLKR">
         <figcaption>
-          <span>01 — THE PROCESS</span>
-          <span>HANDMADE</span>
+          <span>01 — EL PROCESO</span>
+          <span>HECHO A MANO</span>
         </figcaption>
       </figure>
 
       <figure>
         <img src="primer diseño.jpeg" alt="Primera camiseta VÆLKR">
         <figcaption>
-          <span>02 — THE FIRST PIECE</span>
+          <span>02 — LA PRIMERA PRENDA</span>
           <span>ONE OF ONE</span>
         </figcaption>
       </figure>
@@ -1238,7 +1241,7 @@
   <!-- ABOUT -->
 
   <section class="section" id="about">
-    <h2>03 / ABOUT VÆLKR</h2>
+    <h2>07 / SOBRE VÆLKR</h2>
 
     <h3>CÓMO NACIÓ VÆLKR.</h3>
 
@@ -1259,7 +1262,7 @@
     </div>
 
     <p class="product-note">
-      NOT JUST CLOTHING. A PIECE OF ART YOU CAN WEAR.
+      NO ES SOLO ROPA. ES ARTE QUE PUEDES LLEVAR.
     </p>
   </section>
 
@@ -1267,10 +1270,10 @@
     <span>VÆLKR® — WORN DIFFERENT.</span>
 
     <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="#shop">SHOP</a>
-      <a href="#about">ABOUT</a>
-      <a href="#pedido">ORDER REQUEST</a>
-      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">BACK TO TOP ↑</a>
+      <a href="#shop">TIENDA</a>
+      <a href="#about">LA MARCA</a>
+      <a href="#pedido">PEDIDOS</a>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">VOLVER ARRIBA ↑</a>
     </nav>
   </footer>
 
@@ -1299,7 +1302,7 @@
       const size = document.getElementById(sizeSelectId).value;
 
       if (!size) {
-        alert("Please select a size first.");
+        alert("Selecciona una talla primero.");
         return;
       }
 
@@ -1317,12 +1320,12 @@
       const size = document.getElementById("custom-size").value;
 
       if (!phrase) {
-        alert("Please write your text first.");
+        alert("Escribe tu frase primero.");
         return;
       }
 
       if (!size) {
-        alert("Please select a size first.");
+        alert("Selecciona una talla primero.");
         return;
       }
 
@@ -1349,7 +1352,7 @@
       const notes = document.getElementById("request-notes").value.trim();
 
       if (product === "YOUR TEXT. — CUSTOM" && !phrase) {
-        alert("Please add your custom phrase.");
+        alert("Añade tu frase personalizada.");
         return;
       }
 
@@ -1357,19 +1360,19 @@
 
       const stockLine = quantity > 0
         ? `Stock noted in the site code for this size: ${quantity}. Please confirm.`
-        : "Made to order / availability to be confirmed before acceptance.";
+        : "Se prepara bajo pedido; disponibilidad pendiente de confirmar.";
 
       const message = [
-        "Hi VÆLKR! I'd like to request a piece:",
-        `Name: ${name}`,
-        `Contact: ${contact}`,
-        `Piece: ${product}`,
-        `Size: ${size}`,
-        phrase ? `Custom text: ${phrase}` : "",
-        product === "YOUR TEXT. — CUSTOM" ? `Placement: ${document.getElementById("request-placement").value}` : "",
+        "¡Hola, VÆLKR! Quiero solicitar una prenda:",
+        `Nombre: ${name}`,
+        `Contacto: ${contact}`,
+        `Prenda: ${product}`,
+        `Talla: ${size}`,
+        phrase ? `Frase personalizada: ${phrase}` : "",
+        product === "YOUR TEXT. — CUSTOM" ? `Ubicación: ${document.getElementById("request-placement").value}` : "",
         `Availability: ${stockLine}`,
         notes ? `Extra details: ${notes}` : "",
-        "Please confirm availability, final price and delivery costs before confirming the order."
+        "Por favor, confirma la disponibilidad, el precio final y los gastos de envío antes de cerrar el pedido."
       ].filter(Boolean).join("\n");
 
       document.getElementById("request-message").value = message;
@@ -1388,12 +1391,12 @@
 
       try {
         await navigator.clipboard.writeText(message);
-        status.textContent = "Copied. Open Instagram and paste it into your message.";
+        status.textContent = "Copiado. Abre Instagram y pega el texto en tu mensaje.";
       } catch (error) {
         const box = document.getElementById("request-message");
         box.focus();
         box.select();
-        status.textContent = "Automatic copy is unavailable here. The message is selected; copy it manually.";
+        status.textContent = "La copia automática no está disponible. El texto está seleccionado; cópialo manualmente.";
       }
     }
   </script>
