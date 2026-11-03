@@ -700,21 +700,38 @@
       footer { padding: 25px 5%; }
     }
     
-/* VÆLKR — contraste en las tarjetas de SHOP */
-
+/* VÆLKR — tarjetas SHOP uniformes, sin fondos beige */
 .shop-card {
-  border: 1px solid rgba(241, 238, 231, 0.12);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  display: block;
+  background: #10100f;
+  color: #F1EEE7;
+  border: 1px solid rgba(241, 238, 231, 0.16);
+  text-decoration: none;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
 }
 
 .shop-card:hover {
+  background: #10100f;
   border-color: #C9BBA5;
   transform: translateY(-3px);
 }
 
+.shop-card .shop-image {
+  background: #191917;
+  border-color: rgba(241, 238, 231, 0.12);
+}
+
+.shop-card:hover .shop-image {
+  background: #242420;
+}
+
 .shop-info {
   padding: 18px;
+  background: #10100f;
 }
+
+.shop-info h3 { color: #F1EEE7; }
+.shop-info p { color: #aaa69c; }
 
 .shop-label {
   color: #C9BBA5;
@@ -728,14 +745,14 @@
   font-weight: 600;
 }
 
-/* Detalles beige para las colecciones especiales */
-.shop-card.essentials,
-.shop-card.one-of-one {
+/* Beige solo como detalle en Essentials y One of One */
+.shop-card:nth-child(1),
+.shop-card:nth-child(4) {
   border-color: rgba(201, 187, 165, 0.45);
 }
 
-.shop-card.essentials .shop-label,
-.shop-card.one-of-one .shop-label {
+.shop-card:nth-child(1) .shop-label,
+.shop-card:nth-child(4) .shop-label {
   color: #C9BBA5;
 }
 
