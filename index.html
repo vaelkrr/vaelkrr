@@ -750,6 +750,38 @@
   }
 }
 
+/* VÆLKR — identidad visual de las colecciones */
+
+.shop-card.essentials .shop-image {
+  background: #211f1a;
+  border-color: #C9BBA5;
+}
+
+.shop-card.essentials .shirt-text {
+  color: #C9BBA5;
+  text-shadow: 0 0 18px rgba(201, 187, 165, 0.16);
+}
+
+.shop-card.one-of-one .shop-image {
+  background: #24211c;
+  border-color: rgba(201, 187, 165, 0.75);
+}
+
+.shop-card.one-of-one .shirt-text {
+  color: #C9BBA5;
+  -webkit-text-stroke: 0.5px #C9BBA5;
+  text-shadow: 0 0 20px rgba(201, 187, 165, 0.18);
+}
+
+.shop-card.essentials .shop-label,
+.shop-card.one-of-one .shop-label {
+  color: #C9BBA5;
+}
+
+.shop-card:hover .shop-price {
+  color: #C9BBA5;
+}
+
   </style>
 </head>
 
@@ -808,7 +840,7 @@
 
     <div class="shop-grid">
 
-      <a class="shop-card" href="#essentials">
+     <a class="shop-card essentials" href="#essentials">
         <div class="shop-image"><span class="shirt-text small">VÆLKR®</span></div>
         <div class="shop-info">
           <h3>VÆLKR ESSENTIALS</h3>
@@ -838,7 +870,7 @@
         </div>
       </a>
 
-      <a class="shop-card" href="#oneofone">
+      <a class="shop-card one-of-one" href="#oneofone">
         <div class="shop-image"><span class="shirt-text back">ONE<br>OF<br>ONE.</span></div>
         <div class="shop-info">
           <h3>ONE OF ONE</h3>
